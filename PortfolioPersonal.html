@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daza Ivan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Island+Moments&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        
+        body {
+            font-family: 'Josefin Slab', serif;
+            background-color: #0E0E0E;
+            color: #d1d5db;
+            margin: 0;
+            padding: 0;
+        }
+
+        section#header h1{
+            font-family: 'Josefin Slab', serif;
+        }
+        .header-name{
+            color: #DCC6A8;
+            font-size: 20px;
+        }
+
+        /* Nuevo contenedor para centrar el header */
+        .header-container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            padding: 1.25rem;
+            height: 50px; 
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            background-color: #181716;
+            border: 1px solid #DCC6A8;
+            width: 900px;
+        }
+        
+
+        header nav a {
+            color: #DCC6A8;
+            text-decoration: none;
+            margin: 0 0.5rem;
+            justify-content: center;
+        }
+        section#home {
+            text-align: center;
+            padding: 3rem;
+            color: #DCC6A8;
+        }
+        section#home .Apellido{
+            color: #DCC6A8;
+            font-family: 'Island Moments',cursive;
+            font-size:100px;
+        }
+        section#home .Nombre{
+            color: #DCC6A8;
+            font-family: 'Josefin Slab', serif;
+            font-size: 100px;
+        }
+        section#home h6{
+            justify-content: left;
+        }
+        section#home h1 {
+            font-size: 3rem;
+            font-family: 'Josefin slab', serif;
+            color: #DCC6A8;
+        }
+        section#home .flex {
+            display: flex;
+            justify-content: space-around;
+            padding: 1.25rem;
+        }
+        section#home .flex > div {
+            background-color: #181716;
+            padding: 1.25rem;
+            margin: 0.5rem;
+            height: 200px   ;
+            width: 25%;
+            border: 1px solid #DCC6A8;
+            margin-bottom: 5rem;
+
+        }
+            section#projects {
+                display:none;
+                justify-content: center;
+                padding: 1.25rem;
+            }
+            
+            section#projects img {
+                margin: 0.5rem;
+                border-radius: 0.5rem;
+                width: 800px;
+                height: 500px;
+            }
+        
+            section#projects {
+                display: flex;
+                justify-content: space-around;
+                padding: 1.25rem;
+            }
+
+            
+    
+            .card {
+                width: 780px;
+                height: 480px;
+                background: #313131;
+                display: flex;
+                flex-direction: column;
+                border-radius: 10px;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                margin: 0.5rem;
+                transition: 0.2s ease-in-out;
+                position: relative;
+                overflow: hidden;
+            }
+    
+            .card img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: 0.2s ease-in-out;
+                z-index: 1;
+            }
+    
+            .textBox {
+                opacity: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 15px;
+                transition: 0.2s ease-in-out;
+                z-index: 2;
+                position: absolute;
+            }
+    
+            .textBox > .text {
+                font-weight: bold;
+                font-size:xx-large  ;
+            }
+    
+            .textBox > .head {
+                font-size: 40px;
+            }
+    
+            .textBox > .price {
+                font-size: 17px;
+            }
+    
+            .textBox > span {
+                font-size: 12px;
+                color: rgb(0, 0, 0);
+            }
+    
+            .card:hover > .textBox {
+                opacity: 1;
+            }
+    
+            .card:hover img {
+                filter: blur(7px);
+                animation: anim 3s infinite;
+            }
+    
+            @keyframes anim {
+                0% {
+                    transform: translateY(0);
+                }
+    
+                50% {
+                    transform: translateY(-20px);
+                }
+    
+                100% {
+                    transform: translateY(0);
+                }
+            }
+    
+            .card:hover {
+                transform: scale(1.04) rotate(-1deg);
+            }
+
+        section#skills {
+            font-family: 'Josefin Slab', serif;
+
+            display: flex;
+            justify-content: space-around;
+            padding: 1.25rem;
+        }
+        #Hab{
+            font-family: 'Josefin Slab', serif;
+            font-size: 4rem;
+            color: #DCC6A8;
+            text-align: center;
+
+            
+        }
+        
+        
+        section#skills > div {
+            font-family: 'Josefin Slab', serif;
+            background-color: #181716;
+            padding: 1.25rem;
+            margin-left: 1rem;
+            width: 25%;
+            border: 1px solid #DCC6A8;
+            color: #DCC6A8;
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            margin-bottom: 5rem;
+        }
+        
+        section#skills div > div {
+            display: flex;
+            align-items: center;
+            margin-left: 1 rem 0;
+            
+        }
+        section#skills div h2{
+            text-align: center;
+        }
+        
+        section#skills img {
+            width: 30px;
+            margin-right: 0.5rem;
+            margin-left: 3rem; /* Espacio entre imagen y texto */
+        }
+        
+        section#skills ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        section#skills ul li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+    
+        section#Espacio{
+            background-color: #22201F   ;
+            border: 1px solid #DCC6A8;
+            height: 60px;
+        }
+
+        /*section#contact {
+            background-color: #181716;
+            padding: 1.25rem;
+            border-top: 1px solid #DCC6A8;
+
+            
+        }
+        section#contact form p{
+            color: #DCC6A8;
+            font-family: 'Josefin Slab', serif;
+            display: flex;
+            justify-content: start;
+            font-size: larger;
+            text-align: start;
+            
+        }
+        
+        section#contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: left;
+            
+        }
+        section#contact p{
+            font-family: 'Josefin Slab', serif;
+            font-size: 4rem;
+            color: #DCC6A8;
+            text-align: center;
+
+        }
+        section#contact #Mensaje {
+            height: 100px;
+            
+        }
+
+        section#contact input,
+        section#contact textarea {
+            font-family: 'Josefin Slab', serif;
+            font-size: medium;
+            margin: 0.5rem;
+            padding: 0.5rem;
+            width: 40%;
+            height: 40px;
+            border: 1px solid #DCC6A8;
+            background-color: #181716;
+            color: #0e5dd2;
+            border-radius: 0.5rem;
+        }
+        section#contact button {
+            font-family: 'Josefin Slab', serif;
+            font-size: large;
+            margin: 0.5rem;
+            padding: 0.5rem;
+            width: 41%;
+            height: 50px;
+            background-color: #DCC6A8;
+            color: black;
+            border-radius: 0.25rem;
+        }*/
+        section#contact {
+            background-color: #181716;
+            padding: 1.25rem;
+            border-top: 1px solid #DCC6A8;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
+        }
+        
+        section#contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: left;
+            width: 80%;
+        }
+        
+        section#contact form p {
+            color: #DCC6A8;
+            font-family: 'Josefin Slab', serif;
+            font-size: larger;
+            width: 50%;
+
+            margin: 0.5rem 0;
+        }
+        
+        section#contact input,
+        section#contact textarea {
+            font-family: 'Josefin Slab', serif;
+            font-size: medium;
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+            width: 50%;
+            height: 45px;
+            border: 1px solid #DCC6A8;
+            background-color: #181716;
+            color: #0e5dd2;
+            border-radius:0.25rem;
+        }
+        
+        section#contact #Mensaje {
+            height: 100px;
+        }
+        
+        section#contact button {
+            font-family: 'Josefin Slab', serif;
+            font-size: large;
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+            width: 51%;
+            height: 45px;
+            background-color: #DCC6A8;
+            color: black;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+            margin-bottom: 4rem;
+        }
+        
+        section#contact button:hover {
+            background-color: #b3a07d;
+        }
+        #Cont{
+            font-family: 'Josefin Slab', serif;
+            font-size: 4rem;
+            color: #DCC6A8;
+            text-align: center;
+
+        }
+        footer {
+            background-color: #181716;
+            color: #DCC6A8;
+            padding: 20px;
+            text-align: left;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #DCC6A8;
+
+        }
+        #botones{
+            display: flex;
+            justify-content: end;
+            align-items:center;
+            padding: 1rem;
+        }
+        .footer div {
+            margin: 10px 0;
+            margin-top: 2rem;
+            align-items: start;
+            
+        }
+        .footer a {
+            color: #dcc6a8;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+            color: #DCC6A8;
+        }
+        .footer-icon {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            color: #DCC6A8;
+            margin-right: 10px;
+            vertical-align: middle;
+            margin-bottom: 1.25rem;
+        }
+        .download-cv {
+            display: inline-block;
+            padding: 20px 30px;
+            border: 1px solid #e0d3bb;
+            color: #e0d3bb;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            margin-right: 4rem;
+            margin-top: 0.8rem;
+            
+        }
+        .download-cv:hover {
+            background-color: #e0d3bb;
+            color: #1a1a1a;
+        }
+        .download-icon {
+            
+            height: 30px;
+            margin-right: 10px;
+        }
+        .referencias{
+            text-decoration: none;
+            color: #DCC6A8;
+        }
+        .ir-inicio {
+            color: #e0d3bb;
+            text-decoration: none;
+            margin-right: 4rem;
+        }
+        .ir-inicio img{
+            height: 20px;
+            margin-right: 1rem;
+        }
+        .ir-inicio:hover {
+            text-decoration: underline;
+        }
+        .footer-name{
+            margin: 2rem;
+            font-size: 20px;
+            width: 200px;
+            text-align: start;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-container">
+        <header class="flex justify-between items-center p-5 bg-gray-800 border border-yellow-500 w-2/5">
+            <div class="header-name">DAZA</div>
+            <nav>
+                <a href="#home" class="text-yellow-500 no-underline mx-2">Inicio</a>
+                <a href="#projects" class="text-yellow-500 no-underline mx-2">Proyectos</a>
+                <a href="#skills" class="text-yellow-500 no-underline mx-2">Habilidades</a>
+                <a href="#contact" class="text-yellow-500 no-underline mx-2">Contacto</a>
+            </nav>
+        </header>
+    </div>
+    
+    <section class="text-center p-12" id="home">
+        <h1 class="Apellido">Daza </h1>
+        <h1 class="Nombre">Ivan </h1>
+        <div class="flex justify-around p-5">
+            <div class="bg-gray-800 p-5 m-2 w-1/4 border border-yellow-500">
+                <h4>01</h4>
+                <h2 class="text-xl">Estudiante Ing. Informatica</h2>
+                <p>Cursando la carrera de ingeniería informática.</p>
+            </div>
+            <div class="bg-gray-800 p-5 m-2 w-1/4 border border-yellow-500">
+                <h4>02</h4>
+                <h2 class="text-xl">Diseñador Web</h2>
+                <p>Más información sobre diseño web.</p>
+            </div>
+            <div class="bg-gray-800 p-5 m-2 w-1/4 border border-yellow-500">
+                <h4>03</h4>
+                <h2 class="text-xl">Desarrollador Web</h2>
+                <p>Más información sobre desarrollo web.</p>
+            </div>
+        </div>
+        
+    </section>
+    <section id="projects">
+        <div class="card">
+            <img src="/public//Rectangle 54.png" alt="Eventum" id="EVENTUM">
+            <div class="textBox">
+                <div class="text">Eventum</div>
+                <div class="head">Descripción del Proyecto</div>
+                <div class="price">Precio: $100</div>
+                <span>Más detalles...</span>
+            </div>
+        </div>
+        <div class="card">
+            <img src="/public//Rectangle 55.png" alt="CodigoZero" id="CodigoZero">
+            <div class="textBox">
+                <div class="text">CodigoZero</div>
+                <div class="head">Descripción del Proyecto</div>
+                <div class="price">Precio: $150</div>
+                <span>Más detalles...</span>
+            </div>
+        </div>
+    </section>
+    
+    <p id="Hab">Habilidades</p>
+    <section class="flex justify-around p-5" id="skills">
+        
+        <div class="bg-gray-800 p-5 m-2 w-1/4 border border-yellow-500">
+            <h2 class="text-xl">Lenguajes de Programación</h2>
+            <div>
+                <ul>
+                    <li>
+                        <img src="/public/logotipo-de-python-language.png" alt="Python">
+                        <h2>Python</h2>
+                    </li>
+                    <br>
+                    <li>
+                        <img src="/public/java (1).png" alt="Java">
+                        <h2>Java</h2>
+                    </li>
+                    <br>
+                    <li>
+                        <img src="/public/secuencia-de-comandos-de-java.png" alt="JavaScript">
+                        <h2>JavaScript</h2>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="bg-gray-800 p-5 m-2 w-1/4 border border-yellow-500">
+            <h2 class="text-xl">Frameworks</h2>
+            <div>
+                <ul>
+                    <li>
+                        <img src="/public/React.png" alt="React.js">
+                        <h2>React.js</h2>
+                    </li>
+                    <br>
+                    <li>
+                        <img src="/public/image 9.png" alt="Next.js">
+                        <h2>Next.js</h2>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="bg-gray-800 p-5 m-2 w-1/4 border border-yellow-500" id="DB">
+            <h2 class="text-xl">Base de Datos</h2>
+            <div>
+                <ul>
+                    <li>
+                        <img src="/public/bd.png" alt="MySQL">
+                        <h2>SQL</h2>
+                    </li>
+                    <br>
+                    <li>
+                        <img src="/public/RedisL.png" alt="Redis">
+                        <h2>Redis</h2>
+                    </li>
+                    <br>
+                    <li>
+                        <img src="/public/image 12.png" alt="MongoDB">
+                        <h2>MongoDB</h2>
+                    </li>
+                    <br>
+                    <li>
+                        <img src="/public/image 14.png" alt="Neo4j">
+                        <h2>Neo4j</h2>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id="Espacio">
+        <br>
+        <br>
+    </section>
+    
+    <section class="bg-gray-800 p-5 text-center border-t border-yellow-500" id="contact">
+        <p id="Cont">Contáctenos</p>
+        <form class="form-center">
+            <p class="input-label">Nombre</p>
+            <input type="text" name="name" placeholder="Ingrese su Nombre" class="input-field">
+            <p class="input-label">Email</p>
+            <input type="email" name="email" placeholder="Ingrese su Correo Electrónico" class="input-field">
+            <p class="input-label">Mensaje</p>
+            <textarea id="Mensaje" name="message" placeholder="Escriba su consulta" class="input-field"></textarea>
+            <button type="submit" class="submit-button">Enviar Mensaje</button>
+        </form>
+    </section>
+    <footer class="bg-gray-800 p-5 flex justify-between items-center flex-wrap border-t border-yellow-500">
+        <div>
+            <div class="footer-name">DAZA</div>
+            <div><img src="/public/Mail.png" class="footer-icon" alt="Email Icon"> ivandaza2004@gmail.com</div>
+            <div><img src="/public/Linkedin.png" class="footer-icon" alt="LinkedIn Icon"> <a class="referencias" href="https://www.linkedin.com/in/ivan-daza">linkedin.com/in/ivan-daza</a></div>
+            <div><img src="/public/Telefono.png" class="footer-icon" alt="Phone Icon"> +54 9 1125485343</div>
+            <div>
+                <img src="/public/Github.png" class="footer-icon" alt="Github">  
+                <a class="referencias" href="https://github.com/IvanDaza4">IvanDaza4</a>
+            </div>
+        </div>
+        <div id="botones">
+            <a href="#" class="download-cv">
+                <img src="/public/descargar.png" class="download-icon" alt="Download Icon">
+                DESCARGAR CV
+            </a>
+            <a href="#" class="ir-inicio">
+                <img src="/public/Arrow 3.png" class="Up Page">
+                IR A INICIO
+            </a>
+        </div>
+    </footer>
+</body>
+</html>
