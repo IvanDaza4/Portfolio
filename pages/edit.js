@@ -43,11 +43,14 @@ const Edit = () => {
         {
           id: uuidv4(),
           title: "New Project",
-          description: "Web Design & Development",
+          area: "Web Design & Development",
           imageSrc:
             "https://images.unsplash.com/photo-1517479149777-5f3b1511d5ad?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTAyfHxwYXN0ZWx8ZW58MHx8MHw%3D&auto=format&fit=crop&w=400&q=60",
 
           url: "http://chetanverma.com/",
+          duration: '3 weeks',
+          description: "This is a new project.",
+          
         },
       ],
     });
@@ -213,7 +216,7 @@ const Edit = () => {
               ></input>
             </div>
             <div className="mt-5 flex items-center">
-              <label className="w-1/5 text-sx opacity-50">
+              <label className="w-1/4 text-sx opacity-50">
                 Header Tagline One
               </label>
               <input
@@ -260,7 +263,7 @@ const Edit = () => {
                 onChange={(e) =>
                   setData({ ...data, headerTaglineFour: e.target.value })
                 }
-                className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
+                className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2 "
                 type="text"
               ></input>
             </div>
@@ -374,14 +377,14 @@ const Edit = () => {
                   </div>
                   <div className="flex items-center mt-2">
                     <label className="w-1/5 text-lg opacity-50">
-                      Description
+                      Area
                     </label>
                     <input
-                      value={project.description}
+                      value={project.area }
                       onChange={(e) =>
                         editProjects(index, {
                           ...project,
-                          description: e.target.value,
+                          area: e.target.value,
                         })
                       }
                       className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
@@ -405,13 +408,41 @@ const Edit = () => {
                     ></input>
                   </div>
                   <div className="flex items-center mt-2">
-                    <label className="w-1/5 text-lg opacity-50">url</label>
+                    <label className="w-1/5 text-lg opacity-50">URL</label>
                     <input
                       value={project.url}
                       onChange={(e) =>
                         editProjects(index, {
                           ...project,
                           url: e.target.value,
+                        })
+                      }
+                      className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
+                      type="text"
+                    ></input>
+                  </div>
+                  <div className="flex items-center mt-2">
+                    <label className="w-1/5 text-lg opacity-50">Description</label>
+                    <input
+                      value={project.description}
+                      onChange={(e) =>
+                        editProjects(index, {
+                          ...project,
+                          description: e.target.value,
+                        })
+                      }
+                      className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"
+                      type="text"
+                    ></input>
+                  </div>
+                  <div className="flex items-center mt-2">
+                    <label className="w-1/5 text-lg opacity-50">Duration</label>
+                    <input
+                      value={project.duration}
+                      onChange={(e) =>
+                        editProjects(index, {
+                          ...project,
+                          duration: e.target.value,
                         })
                       }
                       className="w-4/5 ml-10 p-2 rounded-md shadow-lg border-2"

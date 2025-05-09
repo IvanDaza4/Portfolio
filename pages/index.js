@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import ServiceCard from "../components/ServiceCard";
 import Socials from "../components/Socials";
 import WorkCard from "../components/WorkCard";
+import SkillsCarousel from "../components/SkillsCarousel";
 import { useIsomorphicLayoutEffect } from "../utils";
 import { stagger } from "../animations";
 import Footer from "../components/Footer";
@@ -79,13 +80,13 @@ export default function Home() {
             </h1>
             <h1
               ref={textThree}
-              className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5"
+              className="text-xl tablet:text-6xl laptop:text-xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5 dark:text-gray-400 "
             >
               {data.headerTaglineThree}
             </h1>
             <h1
               ref={textFour}
-              className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5"
+              className="text-xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5 dark:text-gray-400 "
             >
               {data.headerTaglineFour}
             </h1>
@@ -103,6 +104,8 @@ export default function Home() {
                 img={project.imageSrc}
                 name={project.title}
                 description={project.description}
+                area = {project.area}
+                duration = {project.duration}
                 onClick={() => window.open(project.url)}
               />
             ))}
@@ -121,6 +124,7 @@ export default function Home() {
             ))}
           </div>
         </div>
+        
         {/* This button should not go into production */}
         {process.env.NODE_ENV === "development" && (
           <div className="fixed bottom-5 right-5">
@@ -129,6 +133,13 @@ export default function Home() {
             </Link>
           </div>
         )}
+
+        <div className=" w-full space-y-8">
+          
+
+          <SkillsCarousel className='mt-10
+          '/>
+        </div>
         <div className="mt-10 laptop:mt-40 p-2 laptop:p-0" ref={aboutRef}>
           <h1 className="tablet:m-10 text-2xl text-bold">About.</h1>
           <p className="tablet:m-10 mt-2 text-xl laptop:text-3xl w-full laptop:w-3/5">
