@@ -8,18 +8,21 @@ const ServiceCard = ({ name, description }) => {
   useEffect(() => {
     setMounted(true);
   }, []);
+
   return (
-    <div
-      className={`w-full p-2 mob:p-4 rounded-lg transition-all ease-out duration-300 ${
-        mounted && theme === "dark" ? "hover:bg-slate-800" : "hover:bg-slate-50"
-      } hover:scale-105 link`}
-    >
-      <h1 className="text-3xl">{name ? name : "Heading"}</h1>
-      <p className="mt-5 opacity-40 text-xl">
-        {description
-          ? description
-          : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. "}
-      </p>
+    <div className="relative group w-full p-2 mob:p-4 rounded-lg overflow-hidden transition-all ease-out duration-300 hover:scale-105">
+      <div
+        className={`relative z-10 ${
+          mounted && theme === "dark" ? "hover:bg-purple-600/20 hover:border-purple-400 hover:border" : "hover:bg-purple-600/20"
+        } p-4 rounded-lg transition-colors duration-300`}
+      >
+        <h1 className="text-3xl">{name || "Heading"}</h1>
+        <p className="mt-5 opacity-40 text-xl">
+          {description ||
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry..."}
+        </p>
+      </div>
+      <span className="absolute inset-0 border-2 hover:border-purple-400 hover:border border-purple-400 opacity-0 group-hover:opacity-100  animate-borderMove rounded-lg pointer-events-none"></span>
     </div>
   );
 };

@@ -12,7 +12,13 @@ module.exports = {
       desktop: "1280px",
       laptopl: "1440px",
     },
-    extend: {},
+    extend: {
+      colors: {
+        violet: {
+          particles: 'rgba(168, 85, 247, 0.8)'
+        }
+      }
+    },
   },
   plugins: [],
 };

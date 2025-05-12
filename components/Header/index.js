@@ -6,7 +6,7 @@ import Button from "../Button";
 // Local Data
 import data from "../../data/portfolio.json";
 
-const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
+const Header = ({ handleWorkScroll, handleAboutScroll,handleContactScroll, isBlog }) => {
   const router = useRouter();
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
@@ -69,26 +69,21 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
             >
               {!isBlog ? (
                 <div className="grid grid-cols-1">
-                  <Button onClick={handleWorkScroll}>Work</Button>
-                  <Button onClick={handleAboutScroll}>About</Button>
+                  <Button onClick={handleWorkScroll}>Proyectos</Button>
+                  <Button onClick={handleAboutScroll}>Sobre mi</Button>
                   {showBlog && (
                     <Button onClick={() => router.push("/blog")}>Blog</Button>
                   )}
                   {showResume && (
                     <Button
-                      onClick={() =>
-                        window.open("ivandaza2004@gmail.com")
-                      }
+                      onClick={() => window.open("/resume", "_blank")} // Cambiado para abrir el CV en una nueva pestaña
                     >
-                      Resume
+                      Curriculum
                     </Button>
                   )}
 
                   <Button
-                    onClick={() => window.open("ivandaza2004@gmail.com")}
-                  >
-                    Contact
-                  </Button>
+                    onClick={handleContactScroll} >Contacto</Button>
                 </div>
               ) : (
                 <div className="grid grid-cols-1">
@@ -103,12 +98,12 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                       onClick={() => router.push("/resume")}
                       classes="first:ml-1"
                     >
-                      Resume
+                      Curriculum
                     </Button>
                   )}
 
                   <Button
-                    onClick={() => window.open("ivandaza2004@gmail.com")}
+                    onClick={() => window.location.href = "mailto:ivandaza2004@gmail.com"} // Corrección para el botón Contact
                   >
                     Contact
                   </Button>
@@ -131,22 +126,22 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
         </h1>
         {!isBlog ? (
           <div className="flex">
-            <Button onClick={handleWorkScroll}>Work</Button>
-            <Button onClick={handleAboutScroll}>About</Button>
+            <Button onClick={handleWorkScroll}>Proyectos</Button>
+            <Button onClick={handleAboutScroll}>Sobre mi</Button>
             {showBlog && (
               <Button onClick={() => router.push("/blog")}>Blog</Button>
             )}
             {showResume && (
               <Button
-                onClick={() => router.push("/resume")}
+                onClick={() => window.open("/resume", "_blank")} // Cambiado para abrir el CV en una nueva pestaña
                 classes="first:ml-1"
               >
-                Resume
+                Curriculum
               </Button>
             )}
 
-            <Button onClick={() => window.open("ivandaza2004@gmail.com")}>
-              Contact
+            <Button onClick={() => window.location.href = "mailto:ivandaza2004@gmail.com"}>
+              Contacto
             </Button>
             {mounted && theme && data.darkMode && (
               <Button
@@ -174,9 +169,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
               </Button>
             )}
 
-            <Button onClick={() => window.open("ivandaza2004@gmail.com")}>
-              Contact
-            </Button>
+            <Button onClick={handleContactScroll} >Contacto</Button>
 
             {mounted && theme && data.darkMode && (
               <Button
