@@ -13,6 +13,7 @@ import Link from "next/link";
 import Cursor from "../components/Cursor";
 import ParticlesBackground from "../components/ParticlesBackground";
 import TypewriterText from "../components/TypeWriterText";
+import { motion } from "framer-motion";
 
 // Local Data
 import data from "../data/portfolio.json";
@@ -26,6 +27,43 @@ export default function Home() {
   const textTwo = useRef();
   const textThree = useRef();
   const textFour = useRef();
+  const uxTextRef = useRef();
+  const headerText = data.headerTaglineOne.split(" "); // Divide el texto en partes
+  const firstWord = headerText[0]; // "Hola"
+  const restOfText = headerText.slice(1).join(" "); // Resto del texto
+
+
+
+  useEffect(() => {
+    const uxText = "enfoque en UX/UI ";
+    let i = 0;
+    const speed = 100;
+    
+    // Agregar el cursor inicialmente
+    if (uxTextRef.current) {
+      uxTextRef.current.innerHTML = '<span class="blinking-cursor">|</span>';
+    }
+  
+    function typeWriter() {
+      if (i < uxText.length && uxTextRef.current) {
+        // Reemplazar el contenido, incluyendo el cursor al final
+        uxTextRef.current.innerHTML = 
+          uxText.substring(0, i + 1) + 
+          '<span class="blinking-cursor">|</span>';
+        i++;
+        setTimeout(typeWriter, speed);
+      } else if (uxTextRef.current) {
+        // Cuando termine, mantener el cursor parpadeando
+        uxTextRef.current.innerHTML = 
+          uxText + 
+          '<span class="blinking-cursor">|</span>';
+      }
+    }
+  
+    const timer = setTimeout(typeWriter, 1000);
+    
+    return () => clearTimeout(timer);
+  }, []);
 
   // Handling Scroll
   const handleWorkScroll = () => {
@@ -78,36 +116,38 @@ export default function Home() {
         />
         <div className="laptop:mt-20 mt-10">
           <div className="mt-5">
-            <h1
-              ref={textOne}
-              className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-4/5 mob:w-full laptop:w-4/5"
+          <h1
+            ref={textOne}
+            className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 font-bold w-4/5 mob:w-full laptop:w-4/5"
+          >
+            <motion.span
+              initial={{ opacity: 0 }}   // Inicia invisible
+              animate={{ opacity: 1 }}  // Anima a visible
+              transition={{ duration: 0.5 }} // Duración de 0.5 segundos
             >
-              
-              {data.headerTaglineOne}
-            </h1>
+              {data.headerTaglineOne}  {/* Ejemplo: "Hola" */}
+            </motion.span>
+          </h1>
             <h1
               ref={textTwo}
-              className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5"
+              className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 font-bold w-full laptop:w-4/5"
             >
               {data.headerTaglineTwo}
             </h1>
             <h1
               ref={textThree}
-              className="text-xl tablet:text-6xl laptop:text-xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5 dark:text-gray-400 "
+              className="text-xl tablet:text-3xl laptop:text-2xl laptopl:text-4xl p-1 tablet:p-2 font-light w-full laptop:w-4/5 dark:text-gray-400"
             >
-              {data.headerTaglineThree} 
-          
+              Desarrollador full-stack con{" "}
+              <span 
+                ref={uxTextRef} 
+                className="text-violet-500 tracking-wide"
+              />
             </h1>
-            <h1
-              ref={textFour}
-              className="text-xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5 dark:text-gray-400 "
-            >
-              {data.headerTaglineFour}
-            </h1>
+            
           </div>
-
-          <Socials className="mt-2 laptop:mt-5" />
         </div>
+        <Socials className="mt-2 laptop:mt-5" />
         <div className="mt-10 laptop:mt-30 p-2 laptop:p-0" ref={workRef}>
           
           

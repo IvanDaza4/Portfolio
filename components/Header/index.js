@@ -34,7 +34,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isBl
           <div className="flex items-center justify-between w-full p-4">
             <h1
               onClick={() => router.push("/")}
-              className="font-medium text-xl"
+              className="font-medium text-3xl"
             >
               {name}.
             </h1>
