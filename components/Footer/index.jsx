@@ -55,7 +55,7 @@ const Footer = () => {
               </div>
               <div>
                 <p className="font-semibold text-lg text-purple-200">Email</p>
-                <p className="text-lg">contacto@portfolio.com</p>
+                <p className="text-lg">ivandaza2004@gmail.com</p>
               </div>
             </div>
 
@@ -66,7 +66,7 @@ const Footer = () => {
               </div>
               <div>
                 <p className="font-semibold text-lg text-purple-200">LinkedIn</p>
-                <p className="text-lg">linkedin.com/in/portfolio</p>
+                <p className="text-lg" href='https://www.linkedin.com/in/dazaivan/'>https://www.linkedin.com/in/dazaivan/</p>
               </div>
             </div>
           </div>

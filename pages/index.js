@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useEffect} from "react";
 import Header from "../components/Header";
 import ServiceCard from "../components/ServiceCard";
 import Socials from "../components/Socials";

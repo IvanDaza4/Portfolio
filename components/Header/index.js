@@ -6,10 +6,11 @@ import Button from "../Button";
 // Local Data
 import data from "../../data/portfolio.json";
 
-const Header = ({ handleWorkScroll, handleAboutScroll,handleContactScroll, isBlog }) => {
+const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isBlog }) => {
   const router = useRouter();
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const [activeTab, setActiveTab] = useState("");
 
   const { name, showBlog, showResume } = data;
 
@@ -17,102 +18,91 @@ const Header = ({ handleWorkScroll, handleAboutScroll,handleContactScroll, isBlo
     setMounted(true);
   }, []);
 
+  const handleTabClick = (tabName) => {
+    setActiveTab(tabName);
+    // Aquí puedes agregar las acciones correspondientes a cada tab
+    if (tabName === "proyectos") handleWorkScroll();
+    if (tabName === "sobre-mi") handleAboutScroll();
+    if (tabName === "contacto") handleContactScroll();
+  };
+
   return (
     <>
-      <Popover className="block tablet:hidden mt-5">
-        {({ open }) => (
-          <>
-            <div className="flex items-center justify-between p-2 laptop:p-0">
-              <h1
-                onClick={() => router.push("/")}
-                className="font-medium p-2 laptop:p-0 link"
-              >
-                {name}.
-              </h1>
-
-              <div className="flex items-center">
-                {data.darkMode && (
-                  <Button
-                    onClick={() =>
-                      setTheme(theme === "dark" ? "light" : "dark")
-                    }
-                  >
-                    <img
-                      className="h-6"
-                      src={`/images/${
-                        theme === "dark" ? "moon.svg" : "sun.svg"
-                      }`}
-                    ></img>
-                  </Button>
-                )}
-
-                <Popover.Button>
-                  <img
-                    className="h-5"
-                    src={`/images/${
-                      !open
-                        ? theme === "dark"
-                          ? "menu-white.svg"
-                          : "menu.svg"
-                        : theme === "light"
-                        ? "cancel.svg"
-                        : "cancel-white.svg"
-                    }`}
-                  ></img>
-                </Popover.Button>
-              </div>
-            </div>
-            <Popover.Panel
-              className={`absolute right-0 z-10 w-11/12 p-4 ${
-                theme === "dark" ? "bg-slate-800" : "bg-white"
-              } shadow-md rounded-md`}
+      {/* Versión móvil */}
+      <div className="block tablet:hidden">
+        <div className="flex flex-col items-center">
+          <div className="flex items-center justify-between w-full p-4">
+            <h1
+              onClick={() => router.push("/")}
+              className="font-medium text-xl"
             >
-              {!isBlog ? (
-                <div className="grid grid-cols-1">
-                  <Button onClick={handleWorkScroll}>Proyectos</Button>
-                  <Button onClick={handleAboutScroll}>Sobre mi</Button>
-                  {showBlog && (
-                    <Button onClick={() => router.push("/blog")}>Blog</Button>
-                  )}
-                  {showResume && (
-                    <Button
-                      onClick={() => window.open("/resume", "_blank")} // Cambiado para abrir el CV en una nueva pestaña
-                    >
-                      Curriculum
-                    </Button>
-                  )}
+              {name}.
+            </h1>
 
-                  <Button
-                    onClick={handleContactScroll} >Contacto</Button>
-                </div>
-              ) : (
-                <div className="grid grid-cols-1">
-                  <Button onClick={() => router.push("/")} classes="first:ml-1">
-                    Home
-                  </Button>
-                  {showBlog && (
-                    <Button onClick={() => router.push("/blog")}>Blog</Button>
-                  )}
-                  {showResume && (
-                    <Button
-                      onClick={() => router.push("/resume")}
-                      classes="first:ml-1"
-                    >
-                      Curriculum
-                    </Button>
-                  )}
+            {data.darkMode && (
+              <Button
+                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              >
+                <img
+                  className="h-6"
+                  src={`/images/${theme === "dark" ? "moon.svg" : "sun.svg"}`}
+                />
+              </Button>
+            )}
+          </div>
 
-                  <Button
-                    onClick={() => window.location.href = "mailto:ivandaza2004@gmail.com"} // Corrección para el botón Contact
-                  >
-                    Contact
-                  </Button>
-                </div>
+          {/* Menú inferior */}
+          <div className="w-full border-t border-gray-200 dark:border-gray-700">
+            <div className="flex justify-around py-2">
+              <button
+                onClick={() => handleTabClick("proyectos")}
+                className={`px-4 py-2 relative ${activeTab === "proyectos" ? "text-purple-400" : ""}`}
+              >
+                Proyectos
+                {activeTab === "proyectos" && (
+                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-purple-400"></div>
+                )}
+              </button>
+              <button
+                onClick={() => handleTabClick("sobre-mi")}
+                className={`px-4 py-2 relative ${activeTab === "sobre-mi" ? "text-purple-400" : ""}`}
+              >
+                Sobre mí
+                {activeTab === "sobre-mi" && (
+                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-purple-400"></div>
+                )}
+              </button>
+              {showBlog && (
+                <button
+                  onClick={() => router.push("/blog")}
+                  className="px-4 py-2"
+                >
+                  Blog
+                </button>
               )}
-            </Popover.Panel>
-          </>
-        )}
-      </Popover>
+              {showResume && (
+                <button
+                  onClick={() => window.open("/resume", "_blank")}
+                  className="px-4 py-2"
+                >
+                  CV
+                </button>
+              )}
+              <button
+                onClick={() => handleTabClick("contacto")}
+                className={`px-4 py-2 relative ${activeTab === "contacto" ? "text-purple-400" : ""}`}
+              >
+                Contacto
+                {activeTab === "contacto" && (
+                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-purple-400"></div>
+                )}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Versión desktop (se mantiene igual) */}
       <div
         className={`mt-10 hidden flex-row items-center justify-between sticky ${
           theme === "light" && "bg-white"
@@ -133,26 +123,15 @@ const Header = ({ handleWorkScroll, handleAboutScroll,handleContactScroll, isBlo
             )}
             {showResume && (
               <Button
-                onClick={() => window.open("/resume", "_blank")} // Cambiado para abrir el CV en una nueva pestaña
+                onClick={() => window.open("/resume", "_blank")}
                 classes="first:ml-1"
               >
                 Curriculum
               </Button>
             )}
-
             <Button onClick={() => window.location.href = "mailto:ivandaza2004@gmail.com"}>
               Contacto
             </Button>
-            {mounted && theme && data.darkMode && (
-              <Button
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              >
-                <img
-                  className="h-6"
-                  src={`/images/${theme === "dark" ? "moon.svg" : "sun.svg"}`}
-                ></img>
-              </Button>
-            )}
           </div>
         ) : (
           <div className="flex">
@@ -168,19 +147,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll,handleContactScroll, isBlo
                 Resume
               </Button>
             )}
-
-            <Button onClick={handleContactScroll} >Contacto</Button>
-
-            {mounted && theme && data.darkMode && (
-              <Button
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              >
-                <img
-                  className="h-6"
-                  src={`/images/${theme === "dark" ? "moon.svg" : "sun.svg"}`}
-                ></img>
-              </Button>
-            )}
+            <Button onClick={handleContactScroll}>Contacto</Button>
           </div>
         )}
       </div>

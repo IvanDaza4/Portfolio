@@ -23,7 +23,7 @@ const WorkCard = ({ img, name, description, title, area, duration, onClick }) =>
 
   return (
     <div
-      className="overflow-hidden rounded-lg p-2 laptop:p-4 cursor-pointer group transition-all duration-300 dark:hover:bg-gray-800/50"
+      className="overflow-hidden rounded-lg p-2 laptop:p-4 cursor-pointer group transition-all duration-300 dark:hover:bg-purple-700/10"
       onClick={onClick}
     >
       {/* Contenedor de imagen con overlay */}
@@ -74,7 +74,7 @@ const WorkCard = ({ img, name, description, title, area, duration, onClick }) =>
 
       {/* Información siempre visible (fuera del hover) */}
       <div className="mt-4">
-        <h1 className="text-xl font-bold dark:text-white transition-colors duration-300 group-hover:text-purple-400 dark:group-hover:text-blue-400">
+        <h1 className="text-xl font-bold dark:text-white transition-colors duration-300 group-hover:text-purple-400 dark:group-hover:text-purple-400">
           {name || "Project Name"}
         </h1>
         <p className="text-sm text-gray-500 dark:text-gray-400">{area || "Project Area"}</p>
