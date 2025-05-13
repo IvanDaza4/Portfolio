@@ -58,7 +58,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isBl
                     )}
                   </button>
                   <button
-                    onClick={() => window.open("/resume", "_blank")}
+                    onClick={() => router.push("/resume")}
                     className={`px-4 py-2 relative text-pink-400`}
                   >
                     CV
@@ -108,7 +108,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isBl
                   )}
                   {showResume && (
                     <button
-                      onClick={() => window.open("/resume", "_blank")}
+                      onClick={() => router.push("/resume")}
                       className={`px-4 py-2 relative ${router.pathname === "/resume" ? "text-pink-400" : ""}`}
                     >
                       CV
@@ -154,7 +154,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isBl
             )}
             {showResume && (
               <Button
-                onClick={() => window.open("/resume", "_blank")}
+                onClick={() => router.push("/resume")}
                 classes="first:ml-1"
               >
                 Curriculum

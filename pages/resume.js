@@ -60,7 +60,7 @@ const Resume = () => {
         <div className="mt-10 w-full flex flex-col items-center">
           <div className={`
             w-full max-w-4xl p-8 mob:p-5 desktop:p-12 rounded-lg shadow-sm
-            ${theme === "dark" ? "bg-slate-800" : "bg-gray-50"}
+            ${theme === "dark" ? "bg-slate-800" : "bg-slate-800"}
           `}>
             {/* Sección de Información Personal */}
             <div className="border-b pb-6 border-gray-200 dark:border-gray-700">

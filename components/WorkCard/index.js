@@ -23,64 +23,78 @@ const WorkCard = ({ img, name, description, title, area, duration, onClick }) =>
 
   return (
     <div
-      className="overflow-hidden rounded-lg p-2 laptop:p-4 cursor-pointer group transition-all duration-300 dark:hover:bg-purple-700/10"
+      className="overflow-hidden rounded-2xl p-2 laptop:p-4 cursor-pointer group transition-all duration-300 hover:scale-[1.02] hover:shadow-purple-500/30"
       onClick={onClick}
     >
-      {/* Contenedor de imagen con overlay */}
-      <div className="relative rounded-lg overflow-hidden transition-all ease-out duration-300 h-[400px] shadow-md group-hover:shadow-lg">
+      {/* Imagen con overlay */}
+      <div className="relative rounded-xl overflow-hidden transition-all duration-300 h-[400px] shadow-lg group-hover:shadow-xl">
         <img
           src={img}
           alt={name}
-          className="h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
-
-        {/* Overlay con información - Todo alineado a la izquierda */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-          <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 space-y-4 text-left">
-            {/* Área del proyecto (alineado izquierda) */}
-            <div className="flex items-center gap-2 text-sm font-medium text-purple-400">
+  
+        {/* Overlay en hover */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent backdrop-blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-4 md:p-6 flex flex-col justify-end rounded-xl">
+          <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 space-y-3 text-left">
+  
+            {/* Área */}
+            <div className="flex items-center gap-2 text-xs md:text-sm font-medium text-purple-400">
               {getAreaIcon()}
               <span className="capitalize">{area || "Project Area"}</span>
             </div>
-            
-            {/* Título del proyecto */}
-            <h3 className="text-xl font-bold text-white">{name || "Project Name"}</h3>
-            
-            {/* Descripción (alineado izquierda) */}
-            <p className="text-white/60 text-sm font-light line-clamp-3">
+  
+            {/* Título */}
+            <h3 className="text-xl font-semibold text-white group-hover:text-purple-300 transition-colors duration-300">
+              {name || "Project Name"}
+            </h3>
+  
+            {/* Descripción */}
+            <p className="text-sm text-gray-300 hidden md:block">
               {description || "Project description"}
             </p>
-            
-            {/* Duración (alineado izquierda) */}
-            <div className="flex items-center gap-2 text-sm text-white/70">
-              <Clock className="h-4 w-4" />
+            <p className="text-sm text-gray-300 md:hidden line-clamp-3">
+              {description || "Project description"}
+            </p>
+  
+            {/* Duración */}
+            <div className="flex items-center gap-2 text-xs text-white/70">
+              <Clock className="w-4 h-4" />
               <span>{duration || "Duration"}</span>
             </div>
-            
-            {/* Tecnologías (alineado izquierda) */}
-            <div className="flex flex-wrap gap-2 pt-2">
-              {technologies.map((tech, index) => (
-                <span 
-                  key={index} 
-                  className="bg-purple-700/80 text-white px-3 py-1 rounded-full text-xs"
+  
+            {/* Tecnologías */}
+            <div className="flex flex-wrap gap-2 pt-1">
+              {technologies.slice(0, 3).map((tech, index) => (
+                <span
+                  key={index}
+                  className="text-xs font-medium px-2 py-1 rounded-full bg-purple-800/50 text-white backdrop-blur-sm transition-all"
                 >
                   {tech}
                 </span>
               ))}
+              {technologies.length > 3 && (
+                <span className="text-xs px-2 py-1 rounded-full bg-purple-800/30 text-white/70">
+                  +{technologies.length - 3}
+                </span>
+              )}
             </div>
           </div>
         </div>
       </div>
-
-      {/* Información siempre visible (fuera del hover) */}
+  
+      {/* Información persistente */}
       <div className="mt-4">
-        <h1 className="text-xl font-bold dark:text-white transition-colors duration-300 group-hover:text-purple-400 dark:group-hover:text-purple-400">
+        <h1 className="text-xl font-bold text-zinc-800 dark:text-white group-hover:text-purple-400 transition-colors duration-300">
           {name || "Project Name"}
         </h1>
-        <p className="text-sm text-gray-500 dark:text-gray-400">{area || "Project Area"}</p>
+        <p className="text-sm text-gray-600 dark:text-gray-400">
+          {area || "Project Area"}
+        </p>
       </div>
     </div>
   );
+  
 };
 
 export default WorkCard;

@@ -31,7 +31,7 @@ const Socials = ({ className }) => {
                     text-gray-700 dark:text-gray-300 
                     hover:text-violet-600 dark:hover:text-violet-400
                     hover:bg-gray-100 dark:hover:bg-gray-800
-                    transition-all duration-300 text-2xl"
+                    transition-all duration-300 lg:text-2xl sm:text-lg"
         >
           {getIcon(social.title)}
           <span className="font-mono text-xl ">{social.title}</span>

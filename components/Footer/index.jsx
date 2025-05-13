@@ -48,7 +48,7 @@ const Footer = () => {
           <div className="h-1 w-20 bg-purple-500 mt-4 mb-10 rounded-full" />
 
           <div className="space-y-6 text-white/80 text-base">
-            {/* Email */}
+  {/* Email */}
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 flex items-center justify-center rounded-full border border-purple-500 bg-purple-700/20">
                 <Mail className="text-purple-500 w-6 h-6" />
@@ -59,14 +59,18 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* LinkedIn */}
+            {/* LinkedIn - ahora con el mismo estilo que Email */}
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 flex items-center justify-center rounded-full border border-purple-500 bg-purple-700/20">
-                <Linkedin className="text-purple-500 w-6 h-6" />
+                <svg className="text-purple-500 w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
               </div>
               <div>
                 <p className="font-semibold text-lg text-purple-200">LinkedIn</p>
-                <p className="text-lg" href='https://www.linkedin.com/in/dazaivan/'>https://www.linkedin.com/in/dazaivan/</p>
+                <a href="https://www.linkedin.com/in/dazaivan/" className="text-lg text-purple-400 hover:text-purple-300 hover:underline" target="_blank" rel="noopener noreferrer">
+                  linkedin.com/in/dazaivan
+                </a>
               </div>
             </div>
           </div>
@@ -85,7 +89,7 @@ const Footer = () => {
               {/* Nombre */}
               <div>
                 <label htmlFor="name" className="text-sm font-semibold mb-1 block text-white/80">
-                  <User className="inline w-4 h-4 mr-2 text-purple-400" /> Nombre
+                  <User className="inline  w-4 h-4 mr-2 text-purple-400" /> Nombre
                 </label>
                 <input
                   id="name"

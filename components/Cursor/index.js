@@ -11,7 +11,7 @@ const Cursor = () => {
     if (theme.theme === "dark") {
       return "#fff";
     } else if (theme.theme === "light") {
-      return "#000";
+      return "#fff";
     }
   };
 

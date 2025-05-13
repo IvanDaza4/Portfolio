@@ -14,6 +14,8 @@ import Cursor from "../components/Cursor";
 import ParticlesBackground from "../components/ParticlesBackground";
 import TypewriterText from "../components/TypeWriterText";
 import { motion } from "framer-motion";
+import {DownloadIcon} from "lucide-react"
+import DownloadCV from "../components/DownloadCV";
 
 // Local Data
 import data from "../data/portfolio.json";
@@ -148,12 +150,20 @@ export default function Home() {
             
           </div>
         </div>
-        <Socials className="mt-2 laptop:mt-5" />
+        <div className="relative flex flex-col">
+          <Socials className="mt-2 flex laptop:mt-5" />
+          <DownloadCV 
+            cvUrl="/pdf/Daza Ivan Curriculum.pdf" 
+            fileName="Daza_Ivan_CV.pdf" 
+            buttonText="Descargar currículum" 
+            icon={DownloadIcon}/>
+        </div>
+        
         <div className="mt-10 laptop:mt-30 p-2 laptop:p-0" ref={workRef}>
           
           
           <h1 className="rounded-full text-2xl font-bold mt-20 ">Proyectos.</h1>
-
+{/*--------------------------------------------------------------------------------------------------*/}
           <div className="mt-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-2 gap-4">
             {data.projects.map((project) => (
               <WorkCard
@@ -168,13 +178,14 @@ export default function Home() {
               />
             ))}
           </div>
+          {/*--------------------------------------------------------------------------------------------------*/}
         </div>
 
         <div className="px-4 laptop:px-0">
           {/* Services Section */}
           <div className="mt-20 laptop:mt-30">
             <h1 className="text-2xl font-bold ">Servicios.</h1>
-            <div className="mt-5 grid grid-cols-1 laptop:grid-cols-2 gap-6">
+            <div className="mt-5 mb-10 grid grid-cols-1 laptop:grid-cols-2 gap-6">
               {data.services.map((service, index) => (
                 <ServiceCard
                   key={index}
@@ -200,8 +211,8 @@ export default function Home() {
           
 
           {/* About Section */}
-          <div className="h-0.5 w-full bg-purple-400 mt-20 mb-30 rounded-full blur-sm" />          
-          <div className="mt-40 laptop:mt-10 " ref={aboutRef}>
+          <div className="h-0.5 w-full bg-purple-400 lg:mt-20 sm:mt-10 sm:mb-15 lg:mb-30 rounded-full blur-sm" />          
+          <div className="lg:mt-40 laptop:mt-10 " ref={aboutRef}>
             <h1 className="text-2xl font-bold mb-10 mt-20 ">Sobre mí</h1>
             <TypewriterText 
               text={data.aboutpara} 
@@ -210,7 +221,7 @@ export default function Home() {
               onComplete={() => console.log('Texto completado')} // Callback opcional
             />
           </div>
-          <div className="mt-10 mb-10">
+          <div className="mt-10 lg:mb-10">
             <SkillsCarousel />
           </div>
 

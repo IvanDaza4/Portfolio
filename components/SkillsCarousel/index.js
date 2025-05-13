@@ -12,7 +12,10 @@ import {
   SiMongodb,
   SiFigma,
   SiGithub,
+  SiTailwindcss,
+  SiNextdotjs
 } from "react-icons/si";
+import { motion } from "framer-motion";
 
 import "swiper/css";
 
@@ -22,6 +25,8 @@ const skills = [
   { name: "HTML", icon: SiHtml5 },
   { name: "CSS", icon: SiCss3 },
   { name: "React", icon: SiReact },
+  { name: "Next", icon: SiNextdotjs },
+  { name: 'Tailwind', icon: SiTailwindcss},
   { name: "Node.js", icon: SiNodedotjs },
   { name: "NoSQL", icon: SiMongodb },
   { name: "Figma", icon: SiFigma },
@@ -30,11 +35,9 @@ const skills = [
 
 export default function SkillsCarousel() {
   return (
-    <div className="w-full py-12  text-white mb-20 mt-20">
+    <div className="w-full py-12 text-white lg:mb-20 lg:mt-20">
       <div className="container mx-auto px-4">
-        <h2 className="text-2xl font-bold  mb-10 ">
-          Mis Habilidades
-        </h2>
+        <h2 className="text-2xl font-bold mb-10">Mis Habilidades</h2>
 
         <Swiper
           modules={[Autoplay]}
@@ -53,15 +56,23 @@ export default function SkillsCarousel() {
           className="px-2 sm:px-8"
         >
           {skills.map(({ name, icon: Icon }, index) => (
-            <SwiperSlide key={index}>
-              <div className="
-                flex flex-col items-center justify-center p-6 rounded-lg
-                bg-gray-900/50 hover:bg-violet-800/30 border border-transparent
-                hover:border-violet-500 transition-all duration-300 h-40
-              ">
-                <Icon className="w-10 h-10 text-purple-400 mb-3" />
-                <p className="text-lg font-medium">{name}</p>
-              </div>
+            <SwiperSlide key={index} role="listitem" aria-label={name}>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
+                className="
+                  flex flex-col items-center justify-center p-6 rounded-2xl
+                  bg-gray-900/40 hover:bg-purple-700/20 border border-purple-700/10
+                  hover:shadow-lg shadow-purple-700/10 transition-all duration-300
+                  backdrop-blur-md h-40
+                "
+              >
+                <Icon className="w-8 h-8 md:w-10 md:h-10 text-purple-400 mb-3" />
+                <p className="text-sm md:text-lg font-medium">{name}</p>
+              </motion.div>
             </SwiperSlide>
           ))}
         </Swiper>

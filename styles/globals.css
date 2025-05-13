@@ -12,6 +12,8 @@ body {
   @apply dark:bg-black dark:text-white;
 }
 
+
+
 @layer utilities {
   @keyframes borderMove {
     0% {
@@ -130,6 +132,5 @@ body {
   background: inherit;
   border-radius: inherit;
 }
-
 
 
