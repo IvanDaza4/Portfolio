@@ -39,64 +39,95 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isBl
               {name}.
             </h1>
 
-            {data.darkMode && (
-              <Button
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              >
-                <img
-                  className="h-6"
-                  src={`/images/${theme === "dark" ? "moon.svg" : "sun.svg"}`}
-                />
-              </Button>
-            )}
+            
           </div>
 
           {/* Menú inferior */}
           <div className="w-full border-t border-gray-200 dark:border-gray-700">
             <div className="flex justify-around py-2">
-              <button
-                onClick={() => handleTabClick("proyectos")}
-                className={`px-4 py-2 relative ${activeTab === "proyectos" ? "text-purple-400" : ""}`}
-              >
-                Proyectos
-                {activeTab === "proyectos" && (
-                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-purple-400"></div>
-                )}
-              </button>
-              <button
-                onClick={() => handleTabClick("sobre-mi")}
-                className={`px-4 py-2 relative ${activeTab === "sobre-mi" ? "text-purple-400" : ""}`}
-              >
-                Sobre mí
-                {activeTab === "sobre-mi" && (
-                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-purple-400"></div>
-                )}
-              </button>
-              {showBlog && (
-                <button
-                  onClick={() => router.push("/blog")}
-                  className="px-4 py-2"
-                >
-                  Blog
-                </button>
+              {/* Si estamos en /resume, mostrar solo Home, Resume y Contacto */}
+              {router.pathname === "/resume" ? (
+                <>
+                  <button
+                    onClick={() => router.push("/")}
+                    className={`px-4 py-2 relative ${router.pathname === "/" ? "text-pink-400" : ""}`}
+                  >
+                    Home
+                    {router.pathname === "/" && (
+                      <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-pink-400"></div>
+                    )}
+                  </button>
+                  <button
+                    onClick={() => window.open("/resume", "_blank")}
+                    className={`px-4 py-2 relative text-pink-400`}
+                  >
+                    CV
+                    <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-pink-400"></div>
+                  </button>
+                  <button
+                    onClick={() => window.location.href = "mailto:ivandaza2004@gmail.com"}
+                    className={`px-4 py-2 relative ${activeTab === "contacto" ? "text-pink-400" : ""}`}
+                  >
+                    Contacto
+                    {activeTab === "contacto" && (
+                      <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-pink-400"></div>
+                    )}
+                  </button>
+                </>
+              ) : (
+                <>
+                  {/* Menú normal (todas las opciones) */}
+                  <button
+                    onClick={() => handleTabClick("proyectos")}
+                    className={`px-4 py-2 relative ${activeTab === "proyectos" ? "text-pink-400" : ""}`}
+                  >
+                    Proyectos
+                    {activeTab === "proyectos" && (
+                      <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-pink-400"></div>
+                    )}
+                  </button>
+                  <button
+                    onClick={() => handleTabClick("sobre-mi")}
+                    className={`px-4 py-2 relative ${activeTab === "sobre-mi" ? "text-pink-400" : ""}`}
+                  >
+                    Sobre mí
+                    {activeTab === "sobre-mi" && (
+                      <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-pink-400"></div>
+                    )}
+                  </button>
+                  {showBlog && (
+                    <button
+                      onClick={() => router.push("/blog")}
+                      className={`px-4 py-2 relative ${router.pathname === "/blog" ? "text-pink-400" : ""}`}
+                    >
+                      Blog
+                      {router.pathname === "/blog" && (
+                        <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-pink-400"></div>
+                      )}
+                    </button>
+                  )}
+                  {showResume && (
+                    <button
+                      onClick={() => window.open("/resume", "_blank")}
+                      className={`px-4 py-2 relative ${router.pathname === "/resume" ? "text-pink-400" : ""}`}
+                    >
+                      Resume
+                      {router.pathname === "/resume" && (
+                        <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-pink-400"></div>
+                      )}
+                    </button>
+                  )}
+                  <button
+                    onClick={() => handleTabClick("contacto")}
+                    className={`px-4 py-2 relative ${activeTab === "contacto" ? "text-pink-400" : ""}`}
+                  >
+                    Contacto
+                    {activeTab === "contacto" && (
+                      <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-pink-400"></div>
+                    )}
+                  </button>
+                </>
               )}
-              {showResume && (
-                <button
-                  onClick={() => window.open("/resume", "_blank")}
-                  className="px-4 py-2"
-                >
-                  CV
-                </button>
-              )}
-              <button
-                onClick={() => handleTabClick("contacto")}
-                className={`px-4 py-2 relative ${activeTab === "contacto" ? "text-purple-400" : ""}`}
-              >
-                Contacto
-                {activeTab === "contacto" && (
-                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-purple-400"></div>
-                )}
-              </button>
             </div>
           </div>
         </div>
@@ -140,12 +171,14 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isBl
               <Button onClick={() => router.push("/blog")}>Blog</Button>
             )}
             {showResume && (
-              <Button
-                onClick={() => router.push("/resume")}
-                classes="first:ml-1"
-              >
-                Resume
-              </Button>
+              
+              <button
+              onClick={() => router.push("/resume")}
+              className={`px-4 py-2 relative  text-pink-400`}
+            >
+              Curriculum
+              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-pink-400"></div>
+            </button>
             )}
             <Button onClick={handleContactScroll}>Contacto</Button>
           </div>
