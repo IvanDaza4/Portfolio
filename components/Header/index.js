@@ -111,7 +111,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isBl
                       onClick={() => window.open("/resume", "_blank")}
                       className={`px-4 py-2 relative ${router.pathname === "/resume" ? "text-pink-400" : ""}`}
                     >
-                      Resume
+                      CV
                       {router.pathname === "/resume" && (
                         <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-pink-400"></div>
                       )}
