@@ -116,18 +116,19 @@ export default function Home() {
         />
         <div className="laptop:mt-20 mt-10">
           <div className="mt-5">
-          <h1
-            ref={textOne}
-            className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 font-bold w-4/5 mob:w-full laptop:w-4/5"
-          >
-            <motion.span
-              initial={{ opacity: 0 }}   // Inicia invisible
-              animate={{ opacity: 1 }}  // Anima a visible
-              transition={{ duration: 0.5 }} // Duración de 0.5 segundos
+            <h1
+              ref={textOne}
+              className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 font-bold w-4/5 mob:w-full laptop:w-4/5"
             >
-              {data.headerTaglineOne}  {/* Ejemplo: "Hola" */}
-            </motion.span>
-          </h1>
+              <motion.span
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+                className="text-transparent bg-clip-text bg-gradient-to-r from-purple-700 via-purple-400 to-white bg-[length:200%] animate-text-pan"
+              >
+                {data.headerTaglineOne}
+              </motion.span>
+            </h1>
             <h1
               ref={textTwo}
               className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 font-bold w-full laptop:w-4/5"
@@ -151,7 +152,7 @@ export default function Home() {
         <div className="mt-10 laptop:mt-30 p-2 laptop:p-0" ref={workRef}>
           
           
-          <h1 className="rounded-full text-2xl text-bold  ">Work.</h1>
+          <h1 className="rounded-full text-2xl font-bold mt-20 ">Proyectos.</h1>
 
           <div className="mt-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-2 gap-4">
             {data.projects.map((project) => (
@@ -162,7 +163,8 @@ export default function Home() {
                 description={project.description}
                 area = {project.area}
                 duration = {project.duration}
-                onClick={() => window.open(project.url)}
+                
+            
               />
             ))}
           </div>
@@ -170,8 +172,8 @@ export default function Home() {
 
         <div className="px-4 laptop:px-0">
           {/* Services Section */}
-          <div className="mt-10 laptop:mt-30">
-            <h1 className="text-2xl font-bold ">Services.</h1>
+          <div className="mt-20 laptop:mt-30">
+            <h1 className="text-2xl font-bold ">Servicios.</h1>
             <div className="mt-5 grid grid-cols-1 laptop:grid-cols-2 gap-6">
               {data.services.map((service, index) => (
                 <ServiceCard
@@ -198,9 +200,9 @@ export default function Home() {
           
 
           {/* About Section */}
-          <div className="h-0.5 w-full bg-purple-500  mt-4 mb-10 rounded-full justify-center" />
+          <div className="h-0.5 w-full bg-purple-400 mt-20 mb-30 rounded-full blur-sm" />          
           <div className="mt-40 laptop:mt-10 " ref={aboutRef}>
-            <h1 className="text-2xl font-bold mb-10 ">Sobre mí</h1>
+            <h1 className="text-2xl font-bold mb-10 mt-20 ">Sobre mí</h1>
             <TypewriterText 
               text={data.aboutpara} 
               speed={15} 
