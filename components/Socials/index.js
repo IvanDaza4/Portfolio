@@ -28,9 +28,9 @@ const Socials = ({ className }) => {
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center px-6 py-2 rounded-lg 
-                    text-gray-700 dark:text-gray-300 
-                    hover:text-violet-600 dark:hover:text-violet-400
-                    hover:bg-gray-100 dark:hover:bg-gray-800
+                     text-gray-300 
+                    hover:text-violet-400 dark:hover:text-violet-400
+                    hover:bg-gray-800 dark:hover:bg-gray-800
                     transition-all duration-300 lg:text-2xl sm:text-lg"
         >
           {getIcon(social.title)}

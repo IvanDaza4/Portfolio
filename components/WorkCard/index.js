@@ -85,10 +85,10 @@ const WorkCard = ({ img, name, description, title, area, duration, onClick }) =>
   
       {/* Información persistente */}
       <div className="mt-4">
-        <h1 className="text-xl font-bold text-zinc-800 dark:text-white group-hover:text-purple-400 transition-colors duration-300">
+        <h1 className="text-xl font-bold text-white group-hover:text-purple-400 transition-colors duration-300">
           {name || "Project Name"}
         </h1>
-        <p className="text-sm text-gray-600 dark:text-gray-400">
+        <p className="text-sm  text-gray-400">
           {area || "Project Area"}
         </p>
       </div>
