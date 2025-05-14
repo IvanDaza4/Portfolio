@@ -8,12 +8,12 @@ const Cursor = () => {
   const [mount, setMount] = useState();
 
   const getCusomColor = () => {
-    if (theme.theme === "dark") {
-      return "#ffffff";
-    } else if (theme.theme === "light") {
-      return "#fff";
-    }
+    // Siempre devuelve blanco/gris claro independientemente del tema
+    return "#e0e0e0"; // Gris claro (puedes ajustar este valor)
+    // O si prefieres blanco puro:
+    // return "#ffffff";
   };
+
 
   useEffect(() => {
     setMount(true);
