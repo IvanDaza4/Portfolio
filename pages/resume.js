@@ -50,17 +50,17 @@ const Resume = () => {
           </Button>
         </div>
       )}
-      
       {showCursor && <Cursor />}
       <ParticlesBackground />
       <div className="gradient-circle bg-black"></div>
       <div className={`container mx-auto mb-10 ${showCursor ? "cursor-none" : ""}`}>
         <Header isBlog />
         
+
         <div className="mt-10 w-full flex flex-col items-center">
           <div className={`
             w-full max-w-4xl p-8 mob:p-5 desktop:p-12 rounded-lg shadow-sm
-            ${theme === "dark" ? "bg-slate-800" : "bg-slate-800"}
+            ${theme === "dark" ? "bg-gradient-to-br from-[#13111c] to-[#0a090f] border border-purple-400 sm:border-0" : "bg-gradient-to-br sm:border-0 from-[#13111c] to-[#0a090f]"}
           `}>
             {/* Sección de Información Personal */}
             <div className="border-b pb-6 border-gray-200 dark:border-gray-700">

@@ -150,8 +150,8 @@ export default function Home() {
             
           </div>
         </div>
-        <div className="relative flex flex-col">
-          <Socials className="mt-2 flex laptop:mt-5" />
+        <div className="relative flex mt-5 flex-col">
+          <Socials className="mt-2 flex sm:mb-2 mb-5 laptop:mt-5" />
           <DownloadCV 
             cvUrl="/pdf/Daza Ivan Curriculum.pdf" 
             fileName="Daza_Ivan_CV.pdf" 
@@ -213,7 +213,7 @@ export default function Home() {
           {/* About Section */}
           <div className="h-0.5 w-full bg-purple-400 lg:mt-20 sm:mt-10 sm:mb-15 lg:mb-30 rounded-full blur-sm" />          
           <div className="lg:mt-40 laptop:mt-10 " ref={aboutRef}>
-            <h1 className="text-2xl font-bold mb-10 mt-20 ">Sobre mí</h1>
+            <h1 className="text-2xl font-bold mb-10 mt-20 ">Sobre mí.</h1>
             <TypewriterText 
               text={data.aboutpara} 
               speed={15} 

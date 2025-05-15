@@ -37,7 +37,7 @@ export default function SkillsCarousel() {
   return (
     <div className="w-full py-12 text-white lg:mb-20 lg:mt-20">
       <div className="container mx-auto px-4">
-        <h2 className="text-2xl font-bold mb-10">Mis Habilidades</h2>
+        <h2 className="text-2xl font-bold mb-10">Mis Habilidades.</h2>
 
         <Swiper
           modules={[Autoplay]}

@@ -50,23 +50,23 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isBl
                 <>
                   <button
                     onClick={() => router.push("/")}
-                    className={`px-4 py-2 relative ${router.pathname === "/" ? "text-pink-400" : ""}`}
+                    className={`px-4 py-2 text-sm relative ${router.pathname === "/" ? "text-pink-400" : ""}`}
                   >
                     Home
                     {router.pathname === "/" && (
-                      <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-pink-400"></div>
+                      <div className="absolute bottom-0 left-0  right-0 h-0.5 bg-pink-400"></div>
                     )}
                   </button>
                   <button
                     onClick={() => router.push("/resume")}
-                    className={`px-4 py-2 relative text-pink-400`}
+                    className={`px-4 py-2 text-sm relative text-pink-400`}
                   >
                     CV
                     <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-pink-400"></div>
                   </button>
                   <button
                     onClick={() => window.location.href = "mailto:ivandaza2004@gmail.com"}
-                    className={`px-4 py-2 relative ${activeTab === "contacto" ? "text-pink-400" : ""}`}
+                    className={`px-4 py-2 text-sm relative ${activeTab === "contacto" ? "text-pink-400" : ""}`}
                   >
                     Contacto
                     {activeTab === "contacto" && (
@@ -79,16 +79,16 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isBl
                   {/* Menú normal (todas las opciones) */}
                   <button
                     onClick={() => handleTabClick("proyectos")}
-                    className={`px-4 py-2 relative ${activeTab === "proyectos" ? "text-pink-400" : ""}`}
+                    className={`px-4 py-2 text-sm relative ${activeTab === "proyectos" ? "text-pink-400" : ""}`}
                   >
                     Proyectos
                     {activeTab === "proyectos" && (
-                      <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-pink-400"></div>
+                      <div className="absolute bottom-0 left-0 right-0  h-0.5 bg-pink-400"></div>
                     )}
                   </button>
                   <button
                     onClick={() => handleTabClick("sobre-mi")}
-                    className={`px-4 py-2 relative ${activeTab === "sobre-mi" ? "text-pink-400" : ""}`}
+                    className={`px-4 py-2 text-sm relative ${activeTab === "sobre-mi" ? "text-pink-400" : ""}`}
                   >
                     Sobre mí
                     {activeTab === "sobre-mi" && (
@@ -109,7 +109,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isBl
                   {showResume && (
                     <button
                       onClick={() => router.push("/resume")}
-                      className={`px-4 py-2 relative ${router.pathname === "/resume" ? "text-pink-400" : ""}`}
+                      className={`px-4 py-2 text-sm relative ${router.pathname === "/resume" ? "text-pink-400" : ""}`}
                     >
                       CV
                       {router.pathname === "/resume" && (
@@ -119,7 +119,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isBl
                   )}
                   <button
                     onClick={() => handleTabClick("contacto")}
-                    className={`px-4 py-2 relative ${activeTab === "contacto" ? "text-pink-400" : ""}`}
+                    className={`px-4 py-2 text-sm relative ${activeTab === "contacto" ? "text-pink-400" : ""}`}
                   >
                     Contacto
                     {activeTab === "contacto" && (
