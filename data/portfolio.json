@@ -1,1 +1,125 @@
-{"name":"IVAN ","headerTaglineOne":"Hola!","headerTaglineTwo":"Soy Ivan Daza ","headerTaglineThree":"- Desarrollador full-stack ","headerTaglineFour":"con enfoque en UX/UI","showCursor":true,"showBlog":false,"darkMode":true,"showResume":true,"socials":[{"id":"1","title":"LinkedIn","link":"https://www.linkedin.com/in/dazaivan/"},{"id":"2","title":"Github","link":"https://github.com/IvanDaza4"},{"id":"5","title":"Email","link":"ivandaza2004@gmail.com"}],"projects":[{"id":"1","title":"User Interface Designer","description":"Como diseñador UI/UX, colaboré con Código Zero para crear la interfaz de su plataforma de e-commerce. Trabajé desde la conceptualización en Figma —priorizando usabilidad y estética— hasta la coordinación con el equipo de desarrollo, asegurando la fidelidad del diseño durante la implementación. El resultado: una experiencia digital intuitiva y alineada con los objetivos de la marca.","imageSrc":"https://i.imgur.com/ZPI40T3.png","url":"","area":"Ui Designer ","duration":"1 Month"},{"id":"3","title":" Web Designer & Developer","description":"Desarrollé un sitio web personalizado, optimizando su rendimiento y funcionalidad mediante actualizaciones constantes. A través de mejoras en usabilidad y diseño, elevé la satisfacción del usuario y cumplí con los KPIs del proyecto.","imageSrc":"https://i.imgur.com/cHS9q82.png","url":"","area":"Design - Develop","duration":"4 Months"}],"services":[{"id":"012b1126-252c-4832-a931-f3a2b827ddce","title":"Diseño y Desarrollo Web","description":"Creamos sitios web a medida que no solo lucen impresionantes, sino que también ofrecen una experiencia de usuario excepcional. Combinamos diseño atractivo con funcionalidad robusta para crear presencia web que destaca. "},{"id":"63a28a0a-65fa-4a32-bdba-9aaceb27aba0","title":"Diseño UX/UI","description":"Diseñamos interfaces intuitivas y atractivas centradas en el usuario. Nuestro enfoque garantiza que cada interacción sea fluida, agradable y efectiva, mejorando la satisfacción del usuario y las tasas de conversión."},{"id":"65461273-6c4e-4b1c-b1db-6f4ece944485","title":"Identidad de Marca","description":"Desarrollamos identidades de marca distintivas que comunican los valores y la personalidad de tu negocio. Desde logos hasta paletas de colores, creamos sistemas visuales coherentes que resuenan con tu audiencia."},{"id":"b9ffe937-e5a9-45cf-b748-ea0a5dbeee93","title":"Desarrollo Frontend","description":"Construimos interfaces de usuario dinámicas y responsivas utilizando las tecnologías más modernas. Nuestro código limpio y optimizado garantiza rendimiento excepcional en todos los dispositivos."}],"aboutpara":"Soy estudiante de Ingeniería Informática con una ética de trabajo sólida y una profunda pasión por la tecnología. A través de proyectos personales, he cultivado habilidades técnicas y de liderazgo. Mis fortalezas abarcan el diseño, la gestión de equipos y un enfoque proactivo hacia la resolución de problemas. Aspiro a crecer en entornos dinámicos y competitivos, contribuyendo con innovación, estrategia y soluciones efectivas. ","resume":{"tagline":"Desarrollador full-stack y Diseñador UX/UI","description":"Soy un estudiante de Ingeniería Informática apasionado por el desarrollo de software y el diseño de experiencias de usuario. He trabajado en proyectos personales y profesionales, dominando tecnologías modernas como React, Next-JS, Tailwind CSS, JavaScript y Figma. Mi objetivo es crear soluciones innovadoras y funcionales que impacten positivamente en los usuarios.","experiences":[{"id":"1","dates":"Enero 2025 - Abril 2025","type":"Freelance","position":"Frontend Engineer & Web Designer","bullets":"Diseñé y desarrollé una página web adaptada a las necesidades del proyecto. ,Implementé mejoras en diseño y usabilidad para una mejor experiencia de usuario."},{"id":"d495c23b-4f65-479a-9b8a-cfbc1c089725","dates":"Junio 2024 - Septiembre 2024","type":"Freelance","position":"Web Designer","bullets":"Comunicación con el cliente: Entender sus necesidades preferencias estéticas y requerimientos funcionales. ,Diseño UX/UI: Crear prototipos en Figma priorizando una navegación intuitiva y un estilo visual atractivo para el público objetivo. ,Coordinación con desarrolladores: Transferir el diseño aprobado al equipo técnico asegurando fidelidad al concepto original durante la implementación."}],"education":{"universityName":"Universidad Argentina de la Empresa","universityDate":"2022 - Presente","universityPara":"Estudiante de Ingeniería Informática con enfoque en desarrollo de software y diseño de experiencias de usuario."},"languages":["Javascript","HTML5","CSS","Python","SQL"],"frameworks":["React","Typescript","NodeJs"],"others":["Figma"]}}
+{
+    "name": "IVAN ",
+    "headerTaglineOne": "Hola!",
+    "headerTaglineTwo": "Soy Ivan Daza ",
+    "headerTaglineThree": "- IT Manager & Full-Stack Developer",
+    "headerTaglineFour": "Lidero proyectos de software end-to-end, desarrollo soluciones a medida y genero inteligencia de negocio desde datos reales. Disponible para empleo y proyectos freelance.",
+    "showCursor": true,
+    "showBlog": false,
+    "darkMode": true,
+    "showResume": true,
+    "socials": [
+        {
+            "id": "1",
+            "title": "LinkedIn",
+            "link": "https://www.linkedin.com/in/dazaivan/"
+        },
+        {
+            "id": "2",
+            "title": "Github",
+            "link": "https://github.com/IvanDaza4"
+        },
+        {
+            "id": "5",
+            "title": "Email",
+            "link": "ivandaza2004@gmail.com"
+        }
+    ],
+    "projects": [
+        {
+            "id": "1",
+            "title": " Landing Corporativa — Chappe IT Solutions",
+            "description": "Sitio web institucional para una empresa de soluciones tecnológicas. Diseño premium orientado a conversión, con sección de servicios, formulario de contacto y estética profesional alineada a la identidad de marca del cliente.",
+            "imageSrc": "https://raw.githubusercontent.com/IvanDaza4/Portfolio_images/refs/heads/main/ChappeItSolutions.jpeg",
+            "url": "",
+            "area": "Web Developer",
+            "duration": "1 Week"
+        },
+        {
+            "id": "3",
+            "title": "SaaS — Gestión de Stock para Taller",
+            "description": "Plataforma web para el control de inventario de un taller. Permite registrar entradas y salidas de materiales, configurar alertas de stock mínimo y generar reportes de movimientos. Diseñada para ser operada por personal no técnico.",
+            "imageSrc": "https://raw.githubusercontent.com/IvanDaza4/Portfolio_images/refs/heads/main/bugatti.jpeg",
+            "url": "",
+            "area": "Software Developer",
+            "duration": "1 Month"
+        }
+    ],
+    "services": [
+        {
+            "id": "012b1126-252c-4832-a931-f3a2b827ddce",
+            "title": "Desarrollo Web & Full-Stack",
+            "description": "Diseño y desarrollo aplicaciones web completas, desde la interfaz hasta la base de datos. Trabajo con React, Next.js, Node.js y Tailwind, construyendo productos que escalan: landings corporativas, sistemas de gestión y plataformas SaaS con lógica de negocio real."
+        },
+        {
+            "id": "63a28a0a-65fa-4a32-bdba-9aaceb27aba0",
+            "title": "Desarrollo de Sistemas & SaaS",
+            "description": "Desarrollo plataformas a medida orientadas a resolver problemas concretos de negocio: control de stock, gestión de tickets, automatización de procesos. Cada sistema es diseñado pensando en el usuario final y en la operación real de la empresa."
+        },
+        {
+            "id": "65461273-6c4e-4b1c-b1db-6f4ece944485",
+            "title": "Reportes & Business Intelligence",
+            "description": "Genero reportes gerenciales automatizados conectados directamente a bases de datos productivas. Power BI, DAX, Python y ReportLab para convertir datos crudos en información accionable para la toma de decisiones."
+        },
+        {
+            "id": "b9ffe937-e5a9-45cf-b748-ea0a5dbeee93",
+            "title": "Consultoría & Gestión de Proyectos IT",
+            "description": "Acompaño proyectos tecnológicos desde el relevamiento hasta la entrega: definición de alcance, documentación técnica, seguimiento de avance y coordinación de equipos. Experiencia real liderando iniciativas en entornos productivos."
+        }
+    ],
+    "aboutpara": "Soy Iván Daza, IT Manager en Ingnala S.A. y estudiante de Ingeniería en Software en la UADE. Me desempeño en la gestión completa de proyectos tecnológicos — desde el relevamiento inicial hasta el deploy en producción — combinando desarrollo full-stack, business intelligence y administración de infraestructura. En Ingnala lidero iniciativas de software, genero reportes gerenciales automatizados desde la base de datos productiva, administro servidores Linux en producción y capacito equipos en herramientas como Power BI y Excel. Paralelamente, desarrollo soluciones SaaS propias y trabajo con clientes freelance en proyectos de diseño y desarrollo web. Me oriento hacia roles de liderazgo técnico y Project Management, combinando visión estratégica con ejecución concreta.",
+    "resume": {
+        "tagline": "IT Manager & Full-Stack Developer · Business Intelligence",
+        "description": "Profesional de IT con experiencia integral en gestión tecnológica, desarrollo full-stack y business intelligence. Me desempeño como IT Manager en Ingnala S.A., donde lidero proyectos de software end-to-end, genero reportes gerenciales desde bases de datos productivas, administro servidores y dicto capacitaciones internas. Combino visión estratégica con ejecución técnica, orientándome hacia roles de Project Management y liderazgo técnico.",
+        "experiences": [
+            {
+                "id": "1",
+                "dates": "Junio 2025 - Actualidad",
+                "type": "Full Time",
+                "position": "IT Manager — Ingnala S.A.",
+                "bullets": "Gestiono el ciclo completo de proyectos de software: relevamiento planificación ejecución y control de avance.,Desarrollo reportes gerenciales automatizados integrados a la base de datos productiva con KPIs de cartera y altas/bajas de clientes.,Administro infraestructura de servidores de producción: optimización de rendimiento disponibilidad y planes de backup.,Elaboro documentación técnica y funcional de procesos proyectos y sistemas internos.,Diseño e imparto capacitaciones internas de Power BI y Excel orientadas a equipos no técnicos.,Proveo soporte técnico de hardware y software en dos empresas del rubro garantizando continuidad operativa."
+            },
+            {
+                "id": "2",
+                "dates": "2025 - Actualidad",
+                "type": "Proyecto Propio",
+                "position": "SaaS de Ticketing IT — Chappe IT Solutions",
+                "bullets": "Plataforma SaaS para elevación y gestión de tickets de soporte técnico.,Asignación automática de técnicos según conocimientos registrados optimizando tiempos de respuesta.,Integrada a la landing corporativa de Chappe IT Solutions.,Stack: React · Node.js · SQL"
+            },
+            {
+                "id": "3",
+                "dates": "2025",
+                "type": "Freelance",
+                "position": "SaaS — Gestión de Stock para Taller",
+                "bullets": "Sistema SaaS para control de inventario y stock de un taller.,Módulos de entradas y salidas de materiales con alertas de stock mínimo y reportes de movimientos.,Diseñado para ser operado por personal no técnico.,Stack: React · Node.js · NoSQL"
+            }
+        ],
+        "education": {
+            "universityName": "Universidad Argentina de la Empresa (UADE)",
+            "universityDate": "Marzo 2022 - Presente",
+            "universityPara": "Estudiante de Ingeniería en Software con enfoque en desarrollo full-stack, gestión de proyectos tecnológicos y business intelligence."
+        },
+        "languages": [
+            "Python",
+            "JavaScript",
+            "Java",
+            "SQL"
+        ],
+        "frameworks": [
+            "React",
+            "Next.js",
+            "Node.js",
+            "Tailwind CSS",
+            "REST APIs"
+        ],
+        "others": [
+            "Power BI",
+            "DAX",
+            "Figma",
+            "Git/GitHub",
+            "Servidores Linux",
+            "ReportLab",
+            "pptxgenjs"
+        ]
+    }
+}

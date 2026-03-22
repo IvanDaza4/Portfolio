@@ -17,7 +17,7 @@ const Socials = ({ className }) => {
   };
 
   return (
-    <div className={`${className} flex flex-wrap mt-5 gap-4`}>
+    <div className={`${className} flex flex-wrap  gap-4`}>
       {yourData.socials.map((social, index) => (
         <a
           key={index}

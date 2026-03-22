@@ -144,7 +144,7 @@ export default function Home() {
               Desarrollador full-stack con{" "}
               <span 
                 ref={uxTextRef} 
-                className="text-purple-400 tracking-wide"
+                className="text-gray-400 tracking-wide"
               />
             </h1>
             

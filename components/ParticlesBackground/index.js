@@ -10,20 +10,20 @@ const ParticlesBackground = () => {
     for (let i = 0; i < particleCount; i++) {
       const particle = document.createElement('div');
       particle.classList.add('particle');
-      
+
       // Tamaño aleatorio entre 1px y 3px
       const size = Math.random() * 2 + 1;
       particle.style.width = `${size}px`;
       particle.style.height = `${size}px`;
-      
+
       // Posición aleatoria
       particle.style.left = `${Math.random() * 100}vw`;
       particle.style.top = `${Math.random() * 100}vh`;
-      
+
       // Animación
       particle.style.animation = `move ${Math.random() * 20 + 10}s linear infinite`;
       particle.style.animationDelay = `${Math.random() * 5}s`;
-      
+
       container.appendChild(particle);
     }
 

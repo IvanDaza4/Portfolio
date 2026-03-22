@@ -58,17 +58,15 @@ const ServiceCard = ({ name, description, icon }) => {
 
       {/* Contenido de la tarjeta */}
       <div
-        className={`relative z-10 p-6 md:p-8 border rounded-2xl transition-all duration-300 ${
-          mounted && theme === "dark"
-            ? "border-purple-400/50 hover:bg-purple-600/10"
-            : "hover:bg-purple-600/10 border-transparent"
-        }`}
+        className={`relative z-10 p-6 md:p-8 border rounded-2xl transition-all duration-300 ${mounted && theme === "dark"
+          ? "border-purple-400/50 hover:bg-purple-600/10"
+          : "hover:bg-purple-600/10 border-transparent"
+          }`}
       >
         {icon && (
           <div
-            className={`mb-6 transform transition-transform duration-500 ${
-              isHovered ? "scale-110" : "scale-100"
-            }`}
+            className={`mb-6 transform transition-transform duration-500 ${isHovered ? "scale-110" : "scale-100"
+              }`}
           >
             {icon}
           </div>

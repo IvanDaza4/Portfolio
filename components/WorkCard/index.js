@@ -1,10 +1,10 @@
 import React from "react";
 import { Clock, Code2, LayoutTemplate, PenTool } from 'lucide-react';
 
-const WorkCard = ({ img, name, description, title, area, duration, onClick }) => {
+const WorkCard = ({ img, name, description, title, area, duration, technologies = [], onClick }) => {
   // Icono según el área de trabajo
   const getAreaIcon = () => {
-    switch(area?.toLowerCase()) {
+    switch (area?.toLowerCase()) {
       case 'design':
       case 'diseño':
         return <LayoutTemplate className="h-4 w-4 text-purple-400" />;
@@ -18,8 +18,7 @@ const WorkCard = ({ img, name, description, title, area, duration, onClick }) =>
     }
   };
 
-  // Tecnologías (añadidas manualmente)
-  const technologies = ['React', 'Tailwind CSS', 'Node.js', 'Figma'];
+  // Tecnologías recibidas como prop
 
   return (
     <div
@@ -33,22 +32,22 @@ const WorkCard = ({ img, name, description, title, area, duration, onClick }) =>
           alt={name}
           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
-  
+
         {/* Overlay en hover */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent backdrop-blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-4 md:p-6 flex flex-col justify-end rounded-xl">
           <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 space-y-3 text-left">
-  
+
             {/* Área */}
             <div className="flex items-center gap-2 text-xs md:text-sm font-medium text-purple-400">
               {getAreaIcon()}
               <span className="capitalize">{area || "Project Area"}</span>
             </div>
-  
+
             {/* Título */}
             <h3 className="text-xl font-semibold text-white group-hover:text-purple-300 transition-colors duration-300">
               {name || "Project Name"}
             </h3>
-  
+
             {/* Descripción */}
             <p className="text-sm text-gray-300 hidden md:block">
               {description || "Project description"}
@@ -56,13 +55,13 @@ const WorkCard = ({ img, name, description, title, area, duration, onClick }) =>
             <p className="text-sm text-gray-300 md:hidden line-clamp-3">
               {description || "Project description"}
             </p>
-  
+
             {/* Duración */}
             <div className="flex items-center gap-2 text-xs text-white/70">
               <Clock className="w-4 h-4" />
               <span>{duration || "Duration"}</span>
             </div>
-  
+
             {/* Tecnologías */}
             <div className="flex flex-wrap gap-2 pt-1">
               {technologies.slice(0, 3).map((tech, index) => (
@@ -82,7 +81,7 @@ const WorkCard = ({ img, name, description, title, area, duration, onClick }) =>
           </div>
         </div>
       </div>
-  
+
       {/* Información persistente */}
       <div className="mt-4">
         <h1 className="text-xl font-bold text-white group-hover:text-purple-400 transition-colors duration-300">
@@ -94,7 +93,7 @@ const WorkCard = ({ img, name, description, title, area, duration, onClick }) =>
       </div>
     </div>
   );
-  
+
 };
 
 export default WorkCard;

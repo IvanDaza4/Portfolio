@@ -21,9 +21,9 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isBl
   const handleTabClick = (tabName) => {
     setActiveTab(tabName);
     // Aquí puedes agregar las acciones correspondientes a cada tab
-    if (tabName === "proyectos") handleWorkScroll();
-    if (tabName === "sobre-mi") handleAboutScroll();
-    if (tabName === "contacto") handleContactScroll();
+    if (tabName === "projects") handleWorkScroll();
+    if (tabName === "about") handleAboutScroll();
+    if (tabName === "contact") handleContactScroll();
   };
 
   return (
@@ -39,7 +39,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isBl
               {name}.
             </h1>
 
-            
+
           </div>
 
           {/* Menú inferior */}
@@ -65,11 +65,11 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isBl
                     <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-pink-400"></div>
                   </button>
                   <button
-                    onClick={() => window.location.href = "mailto:ivandaza2004@gmail.com"}
-                    className={`px-4 py-2 text-sm relative ${activeTab === "contacto" ? "text-pink-400" : ""}`}
+                    onClick={() => handleTabClick("contact")}
+                    className={`px-4 py-2 text-sm relative ${activeTab === "contact" ? "text-pink-400" : ""}`}
                   >
                     Contacto
-                    {activeTab === "contacto" && (
+                    {activeTab === "contact" && (
                       <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-pink-400"></div>
                     )}
                   </button>
@@ -78,20 +78,20 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isBl
                 <>
                   {/* Menú normal (todas las opciones) */}
                   <button
-                    onClick={() => handleTabClick("proyectos")}
-                    className={`px-4 py-2 text-sm relative ${activeTab === "proyectos" ? "text-pink-400" : ""}`}
+                    onClick={() => handleTabClick("projects")}
+                    className={`px-4 py-2 text-sm relative ${activeTab === "projects" ? "text-pink-400" : ""}`}
                   >
                     Proyectos
-                    {activeTab === "proyectos" && (
+                    {activeTab === "projects" && (
                       <div className="absolute bottom-0 left-0 right-0  h-0.5 bg-pink-400"></div>
                     )}
                   </button>
                   <button
-                    onClick={() => handleTabClick("sobre-mi")}
-                    className={`px-4 py-2 text-sm relative ${activeTab === "sobre-mi" ? "text-pink-400" : ""}`}
+                    onClick={() => handleTabClick("about")}
+                    className={`px-4 py-2 text-sm relative ${activeTab === "about" ? "text-pink-400" : ""}`}
                   >
                     Sobre mí
-                    {activeTab === "sobre-mi" && (
+                    {activeTab === "about" && (
                       <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-pink-400"></div>
                     )}
                   </button>
@@ -118,11 +118,11 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isBl
                     </button>
                   )}
                   <button
-                    onClick={() => handleTabClick("contacto")}
-                    className={`px-4 py-2 text-sm relative ${activeTab === "contacto" ? "text-pink-400" : ""}`}
+                    onClick={() => handleTabClick("contact")}
+                    className={`px-4 py-2 text-sm relative ${activeTab === "contact" ? "text-pink-400" : ""}`}
                   >
                     Contacto
-                    {activeTab === "contacto" && (
+                    {activeTab === "contact" && (
                       <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-pink-400"></div>
                     )}
                   </button>
@@ -135,9 +135,8 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isBl
 
       {/* Versión desktop (se mantiene igual) */}
       <div
-        className={`mt-10 hidden flex-row items-center justify-between sticky ${
-          theme === "light" && "bg-white"
-        } dark:text-white top-0 z-10 tablet:flex`}
+        className={`mt-10 hidden flex-row items-center justify-between sticky ${theme === "light" && "bg-white"
+          } dark:text-white top-0 z-10 tablet:flex`}
       >
         <h1
           onClick={() => router.push("/")}
@@ -147,8 +146,8 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isBl
         </h1>
         {!isBlog ? (
           <div className="flex">
-            <Button onClick={handleWorkScroll}>Proyectos</Button>
-            <Button onClick={handleAboutScroll}>Sobre mi</Button>
+            <Button onClick={handleWorkScroll}>Projects</Button>
+            <Button onClick={handleAboutScroll}>About me</Button>
             {showBlog && (
               <Button onClick={() => router.push("/blog")}>Blog</Button>
             )}
@@ -160,8 +159,8 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isBl
                 Curriculum
               </Button>
             )}
-            <Button onClick={() => window.location.href = "mailto:ivandaza2004@gmail.com"}>
-              Contacto
+            <Button onClick={handleContactScroll}>
+              Contact
             </Button>
           </div>
         ) : (
@@ -171,14 +170,14 @@ const Header = ({ handleWorkScroll, handleAboutScroll, handleContactScroll, isBl
               <Button onClick={() => router.push("/blog")}>Blog</Button>
             )}
             {showResume && (
-              
+
               <button
-              onClick={() => router.push("/resume")}
-              className={`px-4 py-2 relative  text-pink-400`}
-            >
-              Curriculum
-              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-pink-400"></div>
-            </button>
+                onClick={() => router.push("/resume")}
+                className={`px-4 py-2 relative  text-pink-400`}
+              >
+                Curriculum
+                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-pink-400"></div>
+              </button>
             )}
             <Button onClick={handleContactScroll}>Contacto</Button>
           </div>

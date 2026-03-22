@@ -16,7 +16,7 @@ const Edit = () => {
 
   const saveData = () => {
     if (process.env.NODE_ENV === "development") {
-      fetch("/api/portfolio", {
+      fetch("/api/blog/portfolio", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -50,7 +50,7 @@ const Edit = () => {
           url: "http://chetanverma.com/",
           duration: '3 weeks',
           description: "This is a new project.",
-          
+
         },
       ],
     });
@@ -380,7 +380,7 @@ const Edit = () => {
                       Area
                     </label>
                     <input
-                      value={project.area }
+                      value={project.area}
                       onChange={(e) =>
                         editProjects(index, {
                           ...project,

@@ -26,7 +26,7 @@ const skills = [
   { name: "CSS", icon: SiCss3 },
   { name: "React", icon: SiReact },
   { name: "Next", icon: SiNextdotjs },
-  { name: 'Tailwind', icon: SiTailwindcss},
+  { name: 'Tailwind', icon: SiTailwindcss },
   { name: "Node.js", icon: SiNodedotjs },
   { name: "NoSQL", icon: SiMongodb },
   { name: "Figma", icon: SiFigma },

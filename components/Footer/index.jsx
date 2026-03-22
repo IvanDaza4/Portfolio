@@ -17,7 +17,7 @@ const Footer = () => {
 
     try {
       await emailjs.send(
-        "service_cowep68",
+        "service_pzaxc9t",
         "template_699i2ko",
         {
           from_name: formState.name,
