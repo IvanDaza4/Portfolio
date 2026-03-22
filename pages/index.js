@@ -1,4 +1,4 @@
-import { useRef, useEffect} from "react";
+import { useRef, useEffect } from "react";
 import Header from "../components/Header";
 import ServiceCard from "../components/ServiceCard";
 import Socials from "../components/Socials";
@@ -14,7 +14,7 @@ import Cursor from "../components/Cursor";
 import ParticlesBackground from "../components/ParticlesBackground";
 import TypewriterText from "../components/TypeWriterText";
 import { motion } from "framer-motion";
-import {DownloadIcon} from "lucide-react"
+import { DownloadIcon } from "lucide-react"
 import DownloadCV from "../components/DownloadCV";
 
 // Local Data
@@ -24,7 +24,7 @@ export default function Home() {
   // Ref
   const workRef = useRef();
   const aboutRef = useRef();
-  const contactRef =  useRef()
+  const contactRef = useRef()
   const textOne = useRef();
   const textTwo = useRef();
   const textThree = useRef();
@@ -37,33 +37,33 @@ export default function Home() {
 
 
   useEffect(() => {
-    const uxText = "enfoque en UX/UI ";
+    const uxText = " ";
     let i = 0;
     const speed = 100;
-    
+
     // Agregar el cursor inicialmente
     if (uxTextRef.current) {
       uxTextRef.current.innerHTML = '<span class="blinking-cursor">|</span>';
     }
-  
+
     function typeWriter() {
       if (i < uxText.length && uxTextRef.current) {
         // Reemplazar el contenido, incluyendo el cursor al final
-        uxTextRef.current.innerHTML = 
-          uxText.substring(0, i + 1) + 
+        uxTextRef.current.innerHTML =
+          uxText.substring(0, i + 1) +
           '<span class="blinking-cursor">|</span>';
         i++;
         setTimeout(typeWriter, speed);
       } else if (uxTextRef.current) {
         // Cuando termine, mantener el cursor parpadeando
-        uxTextRef.current.innerHTML = 
-          uxText + 
+        uxTextRef.current.innerHTML =
+          uxText +
           '<span class="blinking-cursor">|</span>';
       }
     }
-  
+
     const timer = setTimeout(typeWriter, 1000);
-    
+
     return () => clearTimeout(timer);
   }, []);
 
@@ -101,7 +101,7 @@ export default function Home() {
 
   return (
     <div className={`relative ${data.showCursor && "cursor-none"}`}>
-      
+
       {data.showCursor && <Cursor />}
       <Head>
         <title>{data.name}</title>
@@ -141,29 +141,29 @@ export default function Home() {
               ref={textThree}
               className="text-xl tablet:text-3xl laptop:text-2xl laptopl:text-4xl p-1 tablet:p-2 font-light w-full laptop:w-4/5 dark:text-gray-400"
             >
-              Desarrollador full-stack con{" "}
-              <span 
-                ref={uxTextRef} 
+              {data.headerTaglineThree}{" "}
+              <span
+                ref={uxTextRef}
                 className="text-gray-400 tracking-wide"
               />
             </h1>
-            
+
           </div>
         </div>
         <div className="relative flex mt-5 flex-col">
           <Socials className="mt-2 flex sm:mb-2 mb-5 laptop:mt-5" />
-          <DownloadCV 
-            cvUrl="/pdf/Daza Ivan Curriculum.pdf" 
-            fileName="Daza_Ivan_CV.pdf" 
-            buttonText="Descargar currículum" 
-            icon={DownloadIcon}/>
+          <DownloadCV
+            cvUrl="/pdf/Daza Ivan Curriculum.pdf"
+            fileName="Daza_Ivan_CV.pdf"
+            buttonText="Descargar currículum"
+            icon={DownloadIcon} />
         </div>
-        
+
         <div className="mt-10 laptop:mt-30 p-2 laptop:p-0" ref={workRef}>
-          
-          
+
+
           <h1 className="rounded-full text-2xl font-bold mt-20 ">Proyectos.</h1>
-{/*--------------------------------------------------------------------------------------------------*/}
+          {/*--------------------------------------------------------------------------------------------------*/}
           <div className="mt-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-2 gap-4">
             {data.projects.map((project) => (
               <WorkCard
@@ -171,10 +171,10 @@ export default function Home() {
                 img={project.imageSrc}
                 name={project.title}
                 description={project.description}
-                area = {project.area}
-                duration = {project.duration}
-                
-            
+                area={project.area}
+                duration={project.duration}
+
+
               />
             ))}
           </div>
@@ -195,28 +195,28 @@ export default function Home() {
               ))}
             </div>
           </div>
-        
-        {/* This button should not go into production */}
-        {process.env.NODE_ENV === "development" && (
-          <div className="fixed bottom-5 right-5">
-            <Link href="/edit">
-              <Button type="primary">Edit Data</Button>
-            </Link>
-          </div>
-        )}
 
-        
+          {/* This button should not go into production */}
+          {process.env.NODE_ENV === "development" && (
+            <div className="fixed bottom-5 right-5">
+              <Link href="/edit">
+                <Button type="primary">Edit Data</Button>
+              </Link>
+            </div>
+          )}
+
+
 
           {/* Skills Section */}
-          
+
 
           {/* About Section */}
-          <div className="h-0.5 w-full bg-purple-400 lg:mt-20 sm:mt-10 sm:mb-15 lg:mb-30 rounded-full blur-sm" />          
+          <div className="h-0.5 w-full bg-purple-400 lg:mt-20 sm:mt-10 sm:mb-15 lg:mb-30 rounded-full blur-sm" />
           <div className="lg:mt-40 laptop:mt-10 " ref={aboutRef}>
             <h1 className="text-2xl font-bold mb-10 mt-20 ">Sobre mí.</h1>
-            <TypewriterText 
-              text={data.aboutpara} 
-              speed={15} 
+            <TypewriterText
+              text={data.aboutpara}
+              speed={15}
               delay={300} // Opcional: retraso antes de empezar a escribir
               onComplete={() => console.log('Texto completado')} // Callback opcional
             />
@@ -225,22 +225,22 @@ export default function Home() {
             <SkillsCarousel />
           </div>
 
-          
-          
-            
-          
-          
-        <div ref= {contactRef}>
-          <Footer />   
-        </div>
-        
+
+
+
+
+
+          <div ref={contactRef}>
+            <Footer />
+          </div>
+
 
         </div>
 
-        
-         
+
+
       </div>
-      
+
     </div>
   );
 }
