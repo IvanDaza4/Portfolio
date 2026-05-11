@@ -1,7 +1,7 @@
 import React from "react";
 import { Clock, Code2, LayoutTemplate, PenTool } from 'lucide-react';
 
-const WorkCard = ({ img, name, description, title, area, duration, technologies = [], onClick }) => {
+const WorkCard = ({ img, name,url, description, title, area, duration, technologies = [], onClick }) => {
   // Icono según el área de trabajo
   const getAreaIcon = () => {
     switch (area?.toLowerCase()) {
@@ -21,8 +21,11 @@ const WorkCard = ({ img, name, description, title, area, duration, technologies 
   // Tecnologías recibidas como prop
 
   return (
-    <div
-      className="overflow-hidden rounded-2xl p-2 laptop:p-4 cursor-pointer group transition-all duration-300 hover:scale-[1.02] hover:shadow-purple-500/30"
+    <a
+      href={url || {url}}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block overflow-hidden rounded-2xl p-2 laptop:p-4 cursor-pointer group transition-all duration-300 hover:scale-[1.02] hover:shadow-purple-500/30"
       onClick={onClick}
     >
       {/* Imagen con overlay */}
