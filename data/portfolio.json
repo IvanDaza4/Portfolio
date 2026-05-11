@@ -28,7 +28,7 @@
     "projects": [
         {
             "id": "1",
-            "title": "",
+            "title": "Landing Page IT",
             "description": "Sitio web institucional para una empresa de soluciones tecnológicas. Diseño premium orientado a conversión, con sección de servicios, formulario de contacto y estética profesional alineada a la identidad de marca del cliente.",
             "imageSrc": "https://raw.githubusercontent.com/IvanDaza4/Portfolio_images/refs/heads/main/ChappeItSolutions.jpeg",
             "url": "",
@@ -37,7 +37,7 @@
         },
         {
             "id": "3",
-            "title": "",
+            "title": "SaaS Stock",
             "description": "Plataforma web para el control de inventario de un taller. Permite registrar entradas y salidas de materiales, configurar alertas de stock mínimo y generar reportes de movimientos. Diseñada para ser operada por personal no técnico.",
             "imageSrc": "https://raw.githubusercontent.com/IvanDaza4/Portfolio_images/refs/heads/main/bugatti.jpeg",
             "url": "",
@@ -47,7 +47,7 @@
         ,
         {
             "id": "4",
-            "title": "",
+            "title": "Portfolio Web Arquitectura",
             "description": "Plataforma web tipo portfolio para la exhibición de proyectos de arquitectura e interiorismo. Permite explorar galerías visuales de obras, detallar el perfil profesional de la autora y gestionar consultas de contacto. Diseñada para destacar la estética y materialidad de los diseños.",
             "imageSrc": "https://raw.githubusercontent.com/IvanDaza4/Portfolio_images/refs/heads/main/portfolio_arq.jpeg",
             "url": "",

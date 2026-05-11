@@ -43,10 +43,7 @@ const WorkCard = ({ img, name, description, title, area, duration, technologies 
               <span className="capitalize">{area || "Project Area"}</span>
             </div>
 
-            {/* Título */}
-            <h3 className="text-xl font-semibold text-white group-hover:text-purple-300 transition-colors duration-300">
-              {name || "Project Name"}
-            </h3>
+          
 
             {/* Descripción */}
             <p className="text-sm text-gray-300 hidden md:block">
