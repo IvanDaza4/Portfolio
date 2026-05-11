@@ -22,7 +22,7 @@ const WorkCard = ({ img, name,url, description, title, area, duration, technolog
 
   return (
     <a
-      href={url || {url}}
+      href={url || "#"}
       target="_blank"
       rel="noopener noreferrer"
       className="block overflow-hidden rounded-2xl p-2 laptop:p-4 cursor-pointer group transition-all duration-300 hover:scale-[1.02] hover:shadow-purple-500/30"
