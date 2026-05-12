@@ -1,7 +1,7 @@
 import React from "react";
 import { Clock, Code2, LayoutTemplate, PenTool } from 'lucide-react';
 
-const WorkCard = ({ img, name,url, description, title, area, duration, technologies = [], onClick }) => {
+const WorkCard = ({ img, name, url, description, title, area, duration, technologies = [], onClick }) => {
   // Icono según el área de trabajo
   const getAreaIcon = () => {
     switch (area?.toLowerCase()) {
@@ -17,8 +17,6 @@ const WorkCard = ({ img, name,url, description, title, area, duration, technolog
         return <LayoutTemplate className="h-4 w-4 text-purple-400" />;
     }
   };
-
-  // Tecnologías recibidas como prop
 
   return (
     <a
@@ -45,8 +43,6 @@ const WorkCard = ({ img, name,url, description, title, area, duration, technolog
               {getAreaIcon()}
               <span className="capitalize">{area || "Project Area"}</span>
             </div>
-
-          
 
             {/* Descripción */}
             <p className="text-sm text-gray-300 hidden md:block">
@@ -91,9 +87,8 @@ const WorkCard = ({ img, name,url, description, title, area, duration, technolog
           {area || "Project Area"}
         </p>
       </div>
-    </div>
+    </a>
   );
-
 };
 
 export default WorkCard;
